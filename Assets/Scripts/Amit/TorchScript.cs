@@ -18,8 +18,9 @@ public class TorchScript : MonoBehaviour
         {
             //QuenchFire();
         }
-        if(collision.gameObject.tag == "Flammable")
+        if(collision.gameObject.tag == "Flammable" )
         {
+            Debug.Log("Flame On");
             collision.gameObject.GetComponent<Flammable>().FlameOn();
         }
     }

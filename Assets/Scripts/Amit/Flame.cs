@@ -6,7 +6,7 @@ public class Flame : MonoBehaviour
 {
     BoxCollider2D myFlame;
 
-    bool CanBurn = false;
+    [SerializeField] bool CanBurn = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +23,15 @@ public class Flame : MonoBehaviour
         CanBurn = true;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(!CanBurn) { return; }
 
-        if(collision.gameObject.tag == "Flammable")
+        Debug.Log("flame?");
+
+        if (collision.gameObject.tag == "Flammable")
         {
+            Debug.Log("Flame On");
             collision.gameObject.GetComponent<Flammable>().FlameOn();
         }
     }
