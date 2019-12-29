@@ -16,6 +16,9 @@ public class Player2D : MonoBehaviour
     public bool canCrouch = true;
     public bool crouching = false;
     private Rigidbody2D rigidbody2D;
+    public bool touchingGround;
+    public LayerMask groundLayer;
+    public float distance = 1.45f;
 
     private void Start()
     {
@@ -31,16 +34,16 @@ public class Player2D : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         _velocity.x = horizontalInput;
-        if (!_isGrounded)
+        if (!IsGrounded())
         {
             canCrouch = false;
             _velocity.y -= gravity;
         }
 
-        else if (_isGrounded && !_jumping)
+        else if (IsGrounded())
         {
-            
             _velocity.y = 0;
+            canCrouch = true;
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
@@ -48,10 +51,10 @@ public class Player2D : MonoBehaviour
         }
         
 
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
-        {
-            Jump();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        //{
+        //    Jump();
+        //}
         //transform.Translate(_velocity * _speed * Time.deltaTime);
         rigidbody2D.velocity = (_velocity * _speed);
         //transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, transform.rotation.w);
@@ -77,10 +80,6 @@ public class Player2D : MonoBehaviour
         _velocity.y = _jumpHeight;
     }
 
-    public bool isGrounded()
-    {
-        return true;
-    }
 
     public void StopCrouch()
     {
@@ -102,28 +101,59 @@ public class Player2D : MonoBehaviour
         _jumping = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //public void isGroundedRay()
+    //{
+    //    touchingGround = Physics2D.Raycast(transform.position, Vector2.down).distance == 0;
+    //    if (touchingGround)
+    //    {
+    //        canCrouch = true;
+    //        _isGrounded = true;
+    //        _velocity.y = 0;
+    //    }
+    //    else
+    //    {
+    //        _isGrounded = false;
+    //    }
+    //}
+
+    bool IsGrounded()
     {
-        if (collision.tag == "Platform" && collision != null)
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        //float distance = 2.0f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
         {
-            canCrouch = true;
-            _isGrounded = true;
-            _velocity.y = 0;
-            Debug.Log("collision");
+            Debug.Log("grounded");
+            return true;
         }
+        Debug.Log("notgrouneded");
+        return false;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Platform" && collision != null)
-        {
-            _isGrounded = false;
-            Debug.Log("NOOOO collision");
-        }
-    }
+        //private void OnTriggerEnter2D(Collider2D collision)
+        //{
+        //    if (collision.tag == "Platform" && collision != null)
+        //    {
+        //        canCrouch = true;
+        //        _isGrounded = true;
+        //        _velocity.y = 0;
+        //        Debug.Log("collision");
+        //    }
+        //}
+        //
+        //private void OnTriggerExit2D(Collider2D collision)
+        //{
+        //    if (collision.tag == "Platform" && collision != null)
+        //    {
+        //        _isGrounded = false;
+        //        Debug.Log("NOOOO collision");
+        //    }
+        //}
 
 
-    public void ResetY()
+        public void ResetY()
     {
         _velocity.y = 0;
         _isGrounded = false;
