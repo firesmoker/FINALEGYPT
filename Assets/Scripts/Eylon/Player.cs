@@ -148,12 +148,12 @@ public class Player : MonoBehaviour
         if (toRight)
         {
             FacingRight = true;
-            transform.localScale = new Vector2(-1f, 1f);
+            transform.localScale = new Vector2(-0.5f, 0.5f);
         }
         else
         {
             FacingRight = false;
-            transform.localScale = new Vector2(1f, 1f);
+            transform.localScale = new Vector2(0.5f, 0.5f);
         }
     }
 }

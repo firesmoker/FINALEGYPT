@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -750,22 +750,13 @@ MonoBehaviour:
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
-    m_EffectorTransform: {fileID: 1242810984}
-    m_TargetTransform: {fileID: 1962509965}
+    m_EffectorTransform: {fileID: 0}
+    m_TargetTransform: {fileID: 0}
     m_TransformCount: 3
-    m_Transforms:
-    - {fileID: 1464742506}
-    - {fileID: 1464742500}
-    - {fileID: 1242810984}
-    m_DefaultLocalRotations:
-    - {x: 0, y: -0, z: 0.9934874, w: 0.11394218}
-    - {x: -0, y: -0, z: 0.112831324, w: 0.99361414}
-    - {x: 0, y: 0, z: 0, w: 1}
-    m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-  m_Flip: 1
+    m_Transforms: []
+    m_DefaultLocalRotations: []
+    m_StoredLocalRotations: []
+  m_Flip: 0
 --- !u!4 &995164110
 Transform:
   m_ObjectHideFlags: 0
@@ -924,21 +915,12 @@ MonoBehaviour:
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
-    m_EffectorTransform: {fileID: 406142788}
-    m_TargetTransform: {fileID: 578528963}
+    m_EffectorTransform: {fileID: 0}
+    m_TargetTransform: {fileID: 0}
     m_TransformCount: 3
-    m_Transforms:
-    - {fileID: 1464742507}
-    - {fileID: 1464742502}
-    - {fileID: 406142788}
-    m_DefaultLocalRotations:
-    - {x: -0, y: -0, z: 0.8362971, w: 0.5482766}
-    - {x: -0, y: -0, z: -0.5168371, w: 0.85608375}
-    - {x: 0, y: 0, z: 0, w: 1}
-    m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
+    m_Transforms: []
+    m_DefaultLocalRotations: []
+    m_StoredLocalRotations: []
   m_Flip: 0
 --- !u!4 &1337914761
 Transform:
@@ -1412,12 +1394,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1464742496}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1464742499 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -2379478347618723392, guid: b1ee0fe51bf134b51b43bf984f042116,
-    type: 3}
-  m_PrefabInstance: {fileID: 1464742496}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1464742500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5577868962742582806, guid: b1ee0fe51bf134b51b43bf984f042116,
@@ -1454,30 +1430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097b551f2844b054290f18a39bf892e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Solvers:
-  - {fileID: 1974071678}
-  - {fileID: 1337914760}
-  - {fileID: 995164109}
-  - {fileID: 2071464485}
+  m_Solvers: []
   m_Weight: 1
---- !u!4 &1464742505 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -5696069297673358101, guid: b1ee0fe51bf134b51b43bf984f042116,
-    type: 3}
-  m_PrefabInstance: {fileID: 1464742496}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1464742506 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -5026699156002952503, guid: b1ee0fe51bf134b51b43bf984f042116,
-    type: 3}
-  m_PrefabInstance: {fileID: 1464742496}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1464742507 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8575530301746274845, guid: b1ee0fe51bf134b51b43bf984f042116,
-    type: 3}
-  m_PrefabInstance: {fileID: 1464742496}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1464742508
 Animator:
   serializedVersion: 3
@@ -1770,21 +1724,12 @@ MonoBehaviour:
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
-    m_EffectorTransform: {fileID: 133123511}
-    m_TargetTransform: {fileID: 1695060013}
+    m_EffectorTransform: {fileID: 0}
+    m_TargetTransform: {fileID: 0}
     m_TransformCount: 3
-    m_Transforms:
-    - {fileID: 1464742499}
-    - {fileID: 1464742498}
-    - {fileID: 133123511}
-    m_DefaultLocalRotations:
-    - {x: 0, y: -0, z: -0.99498427, w: 0.100031845}
-    - {x: -0, y: -0, z: -0.06974801, w: 0.9975647}
-    - {x: 0, y: 0, z: 0, w: 1}
-    m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
+    m_Transforms: []
+    m_DefaultLocalRotations: []
+    m_StoredLocalRotations: []
   m_Flip: 0
 --- !u!4 &1974071679
 Transform:
@@ -1945,22 +1890,13 @@ MonoBehaviour:
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
-    m_EffectorTransform: {fileID: 1637993911}
-    m_TargetTransform: {fileID: 131197989}
+    m_EffectorTransform: {fileID: 0}
+    m_TargetTransform: {fileID: 0}
     m_TransformCount: 3
-    m_Transforms:
-    - {fileID: 1464742505}
-    - {fileID: 1464742501}
-    - {fileID: 1637993911}
-    m_DefaultLocalRotations:
-    - {x: 0, y: -0, z: 0.9999989, w: 0.0014748131}
-    - {x: -0, y: -0, z: 0.1051595, w: 0.99445534}
-    - {x: 0, y: 0, z: 0, w: 1}
-    m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-  m_Flip: 1
+    m_Transforms: []
+    m_DefaultLocalRotations: []
+    m_StoredLocalRotations: []
+  m_Flip: 0
 --- !u!4 &2071464486
 Transform:
   m_ObjectHideFlags: 0

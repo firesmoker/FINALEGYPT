@@ -30,7 +30,6 @@ public class Flame : MonoBehaviour
         {
             if (gameObject.transform.root != transform)
             {
-                Debug.Log("Game over2");
                 StartCoroutine(GameOver());
             }
             else
@@ -56,10 +55,7 @@ public class Flame : MonoBehaviour
 
     IEnumerator GameOver()
     {
-        Debug.Log("Game over1");
-        
         GameSession gameSession = FindObjectOfType<GameSession>();
-        Debug.Log("Game session: " +gameSession);
         gameSession.GameOver();
         yield return new WaitForSeconds(1);
     }

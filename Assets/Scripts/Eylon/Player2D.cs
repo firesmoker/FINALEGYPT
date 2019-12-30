@@ -20,6 +20,9 @@ public class Player2D : MonoBehaviour
     public LayerMask groundLayer;
     public float distance = 1.45f;
 
+    bool FacingRight = true;
+    bool HasTorch = true;
+
     private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -157,5 +160,19 @@ public class Player2D : MonoBehaviour
     {
         _velocity.y = 0;
         _isGrounded = false;
+    }
+
+    public void FlipSprite(bool toRight)
+    {
+        if (toRight)
+        {
+            FacingRight = true;
+            transform.localScale = new Vector2(-0.5f, 0.5f);
+        }
+        else
+        {
+            FacingRight = false;
+            transform.localScale = new Vector2(0.5f, 0.5f);
+        }
     }
 }
