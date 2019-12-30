@@ -19,7 +19,7 @@ public class Flame : MonoBehaviour
    
     IEnumerator FlameStart()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         CanBurn = true;
         IsOnFire = true;
     }
@@ -40,7 +40,7 @@ public class Flame : MonoBehaviour
         }
 
 
-        if(!CanBurn) { return; }
+        if(!CanBurn) { StartCoroutine(FlameStart()); }
 
         if (collision.gameObject.CompareTag("Flammable"))
         {
@@ -63,7 +63,7 @@ public class Flame : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (!CanBurn) { return; }
+        if (!CanBurn) { StartCoroutine(FlameStart()); }
 
         if (collision.gameObject.CompareTag("Flammable"))
         {

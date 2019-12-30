@@ -22,10 +22,12 @@ public class TorchScript : MonoBehaviour
         {
             collision.gameObject.GetComponent<Flammable>().FlameOn();
         }
+        
         if(collision.gameObject.CompareTag("Flame") && !HasFlame)
         {
             SetTorchOnFire();
         }
+        
     }
 
     private void SetTorchOnFire()
@@ -37,10 +39,5 @@ public class TorchScript : MonoBehaviour
         newFlame.transform.parent = transform;
 
         HasFlame = true;
-    }
-
-    private void QuenchTorch()
-    {
-        HasFlame = false;
     }
 }

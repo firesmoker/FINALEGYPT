@@ -46,7 +46,7 @@ public class Player2D : MonoBehaviour
         }
         else
         {
-            myAnimator.SetBool("Walking", false);
+            myAnimator.SetBool("Idle", false);
         }
         if (!IsGrounded())
         {
