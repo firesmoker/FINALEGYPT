@@ -43,7 +43,7 @@ public class GameSession : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene(0);
     }
 
     public void GameOver()
