@@ -322,6 +322,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.72778726
       objectReference: {fileID: 0}
+    - target: {fileID: 2645475943776499149, guid: 9f51c87d24f058848a8f18a6c5f9ea9b,
+        type: 3}
+      propertyPath: footStepSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 718e24b6486c2ed49931366c4cb69b85, type: 3}
+    - target: {fileID: 2645475943776499149, guid: 9f51c87d24f058848a8f18a6c5f9ea9b,
+        type: 3}
+      propertyPath: footStepSound2
+      value: 
+      objectReference: {fileID: 8300000, guid: a72b08bfed1ac7443a38f1cbf680d75a, type: 3}
+    - target: {fileID: 2645475943776499149, guid: 9f51c87d24f058848a8f18a6c5f9ea9b,
+        type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 349dc101e651f6642b136e00ff789d8e, type: 3}
+    - target: {fileID: 2645475943776499149, guid: 9f51c87d24f058848a8f18a6c5f9ea9b,
+        type: 3}
+      propertyPath: landingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a33fcdbba010aa643b873b31a2f3bedf, type: 3}
     - target: {fileID: 2702280507281987027, guid: 9f51c87d24f058848a8f18a6c5f9ea9b,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -2858,7 +2878,7 @@ AudioSource:
   m_GameObject: {fileID: 1709919581}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: c2f09e2495229674a8173104eea043c7,
+  OutputAudioMixerGroup: {fileID: 1147494601287490094, guid: c2f09e2495229674a8173104eea043c7,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: c037880e1c6c26644b3efc69413afea5, type: 3}
   m_PlayOnAwake: 1

@@ -22,6 +22,7 @@ public class Player2D : MonoBehaviour
     public LayerMask groundLayer;
     public float distance = 1.45f;
     public AudioClip footStepSound1, footStepSound2, jumpSound, landingSound;
+    private AudioSource audio;
 
     bool FacingRight = true;
     bool HasTorch = true;
@@ -30,6 +31,7 @@ public class Player2D : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
     void FixedUpdate()
     {
@@ -62,6 +64,7 @@ public class Player2D : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
+                PlayJump();
             }
         }
         
@@ -205,4 +208,27 @@ public class Player2D : MonoBehaviour
         }
         return false;
     }
+
+    public void PlayFootstep(int i)
+    {
+        if(IsGrounded())
+        {
+            if (i == 1)
+                audio.PlayOneShot(footStepSound1);
+            else if (i == 2)
+                audio.PlayOneShot(footStepSound2);
+        }
+        
+    }
+
+    public void PlayJump()
+    {
+        audio.PlayOneShot(jumpSound);
+    }
+
+    public void PlayLanding()
+    {
+        audio.PlayOneShot(landingSound);
+    }
+
 }
