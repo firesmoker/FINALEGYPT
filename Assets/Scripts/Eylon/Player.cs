@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 _velocity = new Vector3(0, 0, 0);
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _jumpHeight = 10f;
+    [SerializeField] GameObject myTorch;
     private CharacterController _controller;
     [SerializeField] private bool _isGrounded = false;
     public bool _jumping;
@@ -16,10 +17,15 @@ public class Player : MonoBehaviour
     public float headDown = 0.2f;
     public bool canCrouch = true;
     public bool crouching = false;
+
+    bool FacingRight = true;
+    bool HasTorch = true;
+
     // Start is called before the first frame update
     void Start()
     {
         _controller = GetComponent<CharacterController>();
+        //myTorch = FindObjectOfType<TorchScript>() as GameObject;
     }
 
     // Update is called once per frame
@@ -61,6 +67,20 @@ public class Player : MonoBehaviour
             Jump();
         }
         _controller.Move(_velocity * _speed * Time.deltaTime);
+
+        if(Input.GetKeyDown(KeyCode.Mouse0) && HasTorch)
+        {
+            ThrowTorch();
+        }
+    }
+
+    private void ThrowTorch()
+    {
+        if(!HasTorch) { return; }
+
+        HasTorch = false;
+
+
     }
 
     public void Jump()
@@ -127,10 +147,12 @@ public class Player : MonoBehaviour
     {
         if (toRight)
         {
+            FacingRight = true;
             transform.localScale = new Vector2(-1f, 1f);
         }
         else
         {
+            FacingRight = false;
             transform.localScale = new Vector2(1f, 1f);
         }
     }

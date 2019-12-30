@@ -8,6 +8,7 @@ TagManager:
   - PlatformBody
   - Quench
   - Flammable
+  - Flame
   layers:
   - Default
   - TransparentFX

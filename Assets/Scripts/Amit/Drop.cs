@@ -21,9 +21,10 @@ public class Drop : MonoBehaviour
 
     }
 
-    void Kill()
+    public void Kill()
     {
         myRigidbody2D.constraints = RigidbodyConstraints2D.None;
+        myAnimator.SetBool("Hit", false);
         Destroy(this.gameObject);
     }
 

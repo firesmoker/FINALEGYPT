@@ -7,6 +7,7 @@ public class Flame : MonoBehaviour
     BoxCollider2D myFlame;
 
     [SerializeField] bool CanBurn = false;
+    bool IsOnFire = true;
 
     // Start is called before the first frame update
     void Start()
@@ -20,14 +21,29 @@ public class Flame : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         CanBurn = true;
+        IsOnFire = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Quench") && IsOnFire)
+        {
+            if (gameObject.transform.root != transform)
+            {
+                Debug.Log("Game over2");
+                StartCoroutine(GameOver());
+            }
+            else
+            {
+                Debug.Log("Not torch");
+            }
+            Destroy(this.gameObject);
+        }
+
 
         if(!CanBurn) { return; }
 
-        if (collision.gameObject.tag == "Flammable")
+        if (collision.gameObject.CompareTag("Flammable"))
         {
             Flammable flammable = collision.gameObject.GetComponent<Flammable>();
             if (!flammable.IsOn)
@@ -38,12 +54,22 @@ public class Flame : MonoBehaviour
         }
     }
 
+    IEnumerator GameOver()
+    {
+        Debug.Log("Game over1");
+        
+        GameSession gameSession = FindObjectOfType<GameSession>();
+        Debug.Log("Game session: " +gameSession);
+        gameSession.GameOver();
+        yield return new WaitForSeconds(1);
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
 
         if (!CanBurn) { return; }
 
-        if (collision.gameObject.tag == "Flammable")
+        if (collision.gameObject.CompareTag("Flammable"))
         {
             Flammable flammable = collision.gameObject.GetComponent<Flammable>();
             if (!flammable.IsOn)
