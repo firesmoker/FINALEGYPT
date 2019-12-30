@@ -7,7 +7,7 @@ public class Player2D : MonoBehaviour
     [SerializeField] private Vector3 _velocity = new Vector3(0, 0, 0);
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _jumpHeight = 1.5f;
-    [SerializeField] private bool _isGrounded = false;
+    //[SerializeField] private bool _isGrounded = false;
 
     Animator myAnimator;
     public bool _jumping;
@@ -21,6 +21,7 @@ public class Player2D : MonoBehaviour
     public bool touchingGround;
     public LayerMask groundLayer;
     public float distance = 1.45f;
+    public AudioClip footStepSound1, footStepSound2, jumpSound, landingSound;
 
     bool FacingRight = true;
     bool HasTorch = true;
@@ -130,7 +131,7 @@ public class Player2D : MonoBehaviour
     //    }
     //}
 
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
@@ -168,10 +169,10 @@ public class Player2D : MonoBehaviour
 
 
         public void ResetY()
-    {
+        {
         _velocity.y = 0;
-        _isGrounded = false;
-    }
+        //_isGrounded = false;
+        }
 
     public void FlipSprite(bool toRight)
     {
@@ -185,5 +186,23 @@ public class Player2D : MonoBehaviour
             FacingRight = false;
             transform.localScale = new Vector2(0.5f, 0.5f);
         }
+    }
+
+    public bool PlayerStands()
+    {
+        if (_velocity.x == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public bool PlayerIsStill()
+    {
+        if (PlayerStands() && IsGrounded())
+        {
+            return true;
+        }
+        return false;
     }
 }
