@@ -20,7 +20,6 @@ public class TorchScript : MonoBehaviour
         }
         if(collision.gameObject.tag == "Flammable" )
         {
-            Debug.Log("Flame On");
             collision.gameObject.GetComponent<Flammable>().FlameOn();
         }
     }

@@ -122,4 +122,16 @@ public class Player : MonoBehaviour
         _velocity.y = 0;
         _isGrounded = false;
     }
+
+    public void FlipSprite(bool toRight)
+    {
+        if (toRight)
+        {
+            transform.localScale = new Vector2(-1f, 1f);
+        }
+        else
+        {
+            transform.localScale = new Vector2(1f, 1f);
+        }
+    }
 }

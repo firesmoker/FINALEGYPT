@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7997214805266425270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.02, z: 0}
+  m_LocalPosition: {x: 0.03, y: 1.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7997214806700861211}
@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 7997214805818523540}
   - component: {fileID: 7997214805818523626}
   - component: {fileID: 7997214805818523541}
+  - component: {fileID: 1249196302702336378}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -116,13 +117,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: aaa482fc7cb2748439a691bd827d3610, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 8.53, y: 15.36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -162,19 +163,42 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.1821972, y: -1.2208314}
+  m_Offset: {x: 0.15820795, y: 0.04512167}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.90074486, y: 0.74416625}
-    oldSize: {x: 2.95, y: 5}
-    newSize: {x: 0.2, y: 0.2}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.412, y: 6.144}
+    newSize: {x: 8.53, y: 15.36}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.95, y: 5}
+  m_Size: {x: 2.2367573, y: 4.9262524}
   m_EdgeRadius: 0
+--- !u!114 &1249196302702336378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7997214805818523542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f76eeda2b059a74bb40295c6e99ce8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _velocity: {x: 0, y: 0, z: 0}
+  _speed: 1
+  _jumpHeight: 10
+  _isGrounded: 0
+  _jumping: 0
+  gravity: 1
+  head: {fileID: 0}
+  headHeight: 1
+  headDown: 0.2
+  canCrouch: 1
+  crouching: 0
 --- !u!1 &7997214806700861210
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7997214806700861210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7997214806931848461}
@@ -245,12 +269,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c5c6e8dc72805a34e98648c002e6589b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 353da21c640dc9149889bfb536f8e77c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 8.53, y: 15.36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -281,13 +305,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7997214806931848460}
-  m_LocalRotation: {x: 0.0074539855, y: -0.003344482, z: 0.18351355, w: 0.9829833}
-  m_LocalPosition: {x: -0.84, y: -0.22, z: 0}
-  m_LocalScale: {x: 1.0125, y: 1, z: 1}
+  m_LocalRotation: {x: 0.007802671, y: -0.002421936, z: 0.063730665, w: 0.9979337}
+  m_LocalPosition: {x: -1.02, y: 1.22, z: 0.02}
+  m_LocalScale: {x: 0.9902069, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7997214806700861211}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.91, y: -0.22000001, z: 21.148}
+  m_LocalEulerAnglesHint: {x: 0.91, y: -0.22000001, z: 7.306}
 --- !u!70 &7997214806931848450
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -298,11 +322,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000054568955, y: 0.27385598}
-  m_Size: {x: 0.4999996, y: 1.2122967}
+  m_Offset: {x: -0.0000005582451, y: 0.2871227}
+  m_Size: {x: 0.4999992, y: 1.3483657}
   m_Direction: 0
 --- !u!114 &7997214806931848451
 MonoBehaviour:

@@ -13,7 +13,7 @@ public class Drop : MonoBehaviour
         myRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Start is called before the first frame update
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         myAnimator.SetBool("Hit", true);

@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Pivot : MonoBehaviour
 {
-    public GameObject myPlayer;
+    public Player myPlayer;
+
+    private void Start()
+    {
+        myPlayer = FindObjectOfType<Player>();
+    }
 
     private void FixedUpdate()
     {
@@ -18,14 +23,22 @@ public class Pivot : MonoBehaviour
 
         if (rotationZ < -90 || rotationZ > 90)
         {
-            if(myPlayer.transform.eulerAngles.y == 0)
+            if (myPlayer.transform.eulerAngles.y == 0)
             {
                 transform.localRotation = Quaternion.Euler(180, 0, -rotationZ);
             }
-            else if(myPlayer.transform.eulerAngles.y == 180)
+            else if (myPlayer.transform.eulerAngles.y == 180)
             {
                 transform.localRotation = Quaternion.Euler(180, 180, -rotationZ);
             }
+
+            myPlayer.FlipSprite(true);
+            transform.localScale = new Vector2(-1f, 1f);
+        }
+        else
+        {
+            myPlayer.FlipSprite(false);
+            transform.localScale = new Vector2(1f, 1f);
         }
     }
 }

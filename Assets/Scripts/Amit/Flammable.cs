@@ -8,7 +8,7 @@ public class Flammable : MonoBehaviour
     [SerializeField] GameObject flamePrefab;
     Flammable myFlammable;
 
-    bool IsOn = false;
+    public bool IsOn = false;
     bool CanDie = false;
 
     private void Start()
@@ -21,8 +21,10 @@ public class Flammable : MonoBehaviour
         if (!IsOn)
         {
             IsOn = true;
-            GameObject Flame = Instantiate(flamePrefab, transform.position, Quaternion.identity) as GameObject;
-            Debug.Log("Start Flame");
+            GameObject Flame = Instantiate(
+                flamePrefab,
+                transform.position,
+                Quaternion.identity) as GameObject;
         }
         
     }

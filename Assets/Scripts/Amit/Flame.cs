@@ -16,23 +16,41 @@ public class Flame : MonoBehaviour
     }
 
    
-
     IEnumerator FlameStart()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         CanBurn = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!CanBurn) { return; }
 
-        Debug.Log("flame?");
+        if(!CanBurn) { return; }
 
         if (collision.gameObject.tag == "Flammable")
         {
-            Debug.Log("Flame On");
-            collision.gameObject.GetComponent<Flammable>().FlameOn();
+            Flammable flammable = collision.gameObject.GetComponent<Flammable>();
+            if (!flammable.IsOn)
+            {
+                flammable.FlameOn();
+            }
+
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+
+        if (!CanBurn) { return; }
+
+        if (collision.gameObject.tag == "Flammable")
+        {
+            Flammable flammable = collision.gameObject.GetComponent<Flammable>();
+            if (!flammable.IsOn)
+            {
+                flammable.FlameOn();
+            }
+
         }
     }
 }
