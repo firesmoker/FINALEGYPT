@@ -8,6 +8,8 @@ public class Player2D : MonoBehaviour
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _jumpHeight = 1.5f;
     [SerializeField] private bool _isGrounded = false;
+
+    Animator myAnimator;
     public bool _jumping;
     public float gravity = 0.1f;
     public GameObject head;
@@ -26,6 +28,7 @@ public class Player2D : MonoBehaviour
     private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
     void FixedUpdate()
     {
@@ -37,6 +40,14 @@ public class Player2D : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         _velocity.x = horizontalInput;
+        if(_velocity.x != 0)
+        {
+            myAnimator.SetBool("Walking", true);
+        }
+        else
+        {
+            myAnimator.SetBool("Walking", false);
+        }
         if (!IsGrounded())
         {
             canCrouch = false;

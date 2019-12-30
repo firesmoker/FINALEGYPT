@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Pivot : MonoBehaviour
 {
-    public Player myPlayer;
+    public Player2D myPlayer;
 
     private void Start()
     {
-        myPlayer = FindObjectOfType<Player>();
+        myPlayer = FindObjectOfType<Player2D>();
     }
 
     private void FixedUpdate()
