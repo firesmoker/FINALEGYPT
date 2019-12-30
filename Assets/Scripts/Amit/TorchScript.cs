@@ -38,6 +38,7 @@ public class TorchScript : MonoBehaviour
             Quaternion.identity) as GameObject;
         newFlame.transform.parent = transform;
 
+
         HasFlame = true;
     }
 }
