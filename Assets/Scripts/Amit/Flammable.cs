@@ -6,10 +6,12 @@ public class Flammable : MonoBehaviour
 {
 
     [SerializeField] GameObject flamePrefab;
+    [SerializeField] bool CanDie = false;
     Flammable myFlammable;
+    [SerializeField] Vector3 offset;
 
     public bool IsOn = false;
-    bool CanDie = false;
+    
 
     private void Start()
     {
@@ -23,9 +25,21 @@ public class Flammable : MonoBehaviour
             IsOn = true;
             GameObject Flame = Instantiate(
                 flamePrefab,
-                transform.position,
+                transform.position + offset,
                 Quaternion.identity) as GameObject;
+            if (CanDie)
+            {
+                StartCoroutine(KillAfterTime(Flame));
+            }
+            
         }
         
+    }
+
+    IEnumerator KillAfterTime(GameObject flame)
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(flame);
+        Destroy(gameObject);
     }
 }
