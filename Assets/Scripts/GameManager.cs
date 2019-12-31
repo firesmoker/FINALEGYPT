@@ -17,7 +17,7 @@ public class GameManager : MonoSingleton<GameManager>
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         audio = GetComponent<AudioSource>();
         audio.clip = bgMusic;
-        //audio.Play();
+        audio.Play();
     }
 
     private void Update()
