@@ -55,8 +55,9 @@ public class Flame : MonoBehaviour
 
     IEnumerator GameOver()
     {
-        GameSession gameSession = FindObjectOfType<GameSession>();
-        gameSession.GameOver();
+        //GameManager gameManager = FindObjectOfType<GameManager>();
+        //gameManager.GameOver();
+        GameManager.GameOver();
         yield return new WaitForSeconds(1);
     }
 

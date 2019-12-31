@@ -6,14 +6,14 @@ public class Drop : MonoBehaviour
 {
     Animator myAnimator;
     Rigidbody2D myRigidbody2D;
-    public AudioClip dropSound;
-    private AudioSource audio;
+    //public AudioClip dropSound;
+    //private AudioSource audio;
 
     private void Start()
     {
         myAnimator = GetComponent<Animator>();
         myRigidbody2D = GetComponent<Rigidbody2D>();
-        audio = GetComponent<AudioSource>();
+        //audio = GetComponent<AudioSource>();
     }
 
     
@@ -31,9 +31,9 @@ public class Drop : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    public void PlayDropSound()
-    {
-        audio.PlayOneShot(dropSound);
-    }
+   // public void PlayDropSound()
+   // {
+   //     audio.PlayOneShot(dropSound);
+   // }
 
 }

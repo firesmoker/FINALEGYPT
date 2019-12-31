@@ -5,6 +5,8 @@ using UnityEngine;
 public class Pivot : MonoBehaviour
 {
     public Player2D myPlayer;
+    public Vector3 difference;
+    public float rotationZ;
 
     private void Start()
     {
@@ -13,11 +15,11 @@ public class Pivot : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
         difference.Normalize();
 
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
 
@@ -35,7 +37,7 @@ public class Pivot : MonoBehaviour
             myPlayer.FlipSprite(true);
             transform.localScale = new Vector2(-1f, 1f);
         }
-        else
+        else 
         {
             myPlayer.FlipSprite(false);
             transform.localScale = new Vector2(1f, 1f);

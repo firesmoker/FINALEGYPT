@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Head2D : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    Player2D myPlayer;
+
+    private void Start()
     {
-        if (other.tag == "PlatformBody" && other != null)
+        myPlayer = GetComponentInParent<Player2D>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PlatformBody" && collision != null)
         {
             Debug.Log("ouch");
-            GetComponentInParent<Player>().ResetY();
+            myPlayer.ResetY();
         }
     }
+
 }

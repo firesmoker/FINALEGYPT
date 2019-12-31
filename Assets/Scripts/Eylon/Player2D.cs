@@ -7,10 +7,8 @@ public class Player2D : MonoBehaviour
     [SerializeField] private Vector3 _velocity = new Vector3(0, 0, 0);
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _jumpHeight = 1.5f;
-    //[SerializeField] private bool _isGrounded = false;
 
     Animator myAnimator;
-    //public bool //_jumping;
     public float gravity = 0.1f;
     public GameObject head;
     public float headHeight = 1;
@@ -20,10 +18,14 @@ public class Player2D : MonoBehaviour
     private Rigidbody2D rigidbody2D;
     public bool touchingGround;
     public LayerMask groundLayer;
-    public float distance = 1.45f;
+    public float distance;
+    public float headBumpHeight;
     public AudioClip footStepSound1, footStepSound2, jumpSound, landingSound;
     private AudioSource audio;
     public bool landed = true;
+    public bool debugRay = true;
+    public bool debugRayWidth = true;
+    public float playerWidth = 4f;
 
     bool FacingRight = true;
     bool HasTorch = true;
@@ -69,20 +71,13 @@ public class Player2D : MonoBehaviour
                 landed = false;
             }
         }
-        
-
-        //if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
-        //{
-        //    Jump();
-        //}
-        //transform.Translate(_velocity * _speed * Time.deltaTime);
+        HeadBump();
         rigidbody2D.velocity = (_velocity * _speed);
-        //transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, transform.rotation.w);
     }
 
     public void CrouchCalculation()
     {
-        if (Input.GetKey(KeyCode.S) && canCrouch)
+        if (Input.GetKey(KeyCode.S) && landed)
         {
             Crouch();
         }
@@ -95,7 +90,6 @@ public class Player2D : MonoBehaviour
     public void Jump()
     {
         StopCrouch();
-        //_jumping = true;
         Debug.Log("JUMP!");
         _velocity.y = _jumpHeight;
     }
@@ -115,74 +109,65 @@ public class Player2D : MonoBehaviour
         headPosition.position = new Vector3(transform.position.x, transform.position.y + headDown, 0);
     }
 
-    IEnumerator JumpRoutine()
+    public void HeadBump()
     {
-        yield return new WaitForSeconds(0.1f);
-        //_jumping = false;
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.up;
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, headBumpHeight, groundLayer);
+        if (debugRay)
+            Debug.DrawRay(position, direction * headBumpHeight, Color.blue);
+        if (hit.collider != null)
+            _velocity.y -= 1;
     }
 
-    //public void isGroundedRay()
-    //{
-    //    touchingGround = Physics2D.Raycast(transform.position, Vector2.down).distance == 0;
-    //    if (touchingGround)
-    //    {
-    //        canCrouch = true;
-    //        _isGrounded = true;
-    //        _velocity.y = 0;
-    //    }
-    //    else
-    //    {
-    //        _isGrounded = false;
-    //    }
-    //}
 
     public bool IsGrounded()
     {
-        Vector2 position = transform.position;
+        Vector2 position = new Vector2(transform.position.x, transform.position.y - 2.79f);
+        Vector2 rightPosition = new Vector2(position.x + playerWidth, position.y);
+        Vector2 leftPosition = new Vector2(position.x - playerWidth, position.y);
         Vector2 direction = Vector2.down;
-        //float distance = 2.0f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-        if (hit.collider != null)
+        RaycastHit2D hitRight = Physics2D.Raycast(rightPosition, direction, distance, groundLayer);
+        RaycastHit2D hitLeft = Physics2D.Raycast(leftPosition, direction, distance, groundLayer);
+        bool groundHit = false;
+        if (debugRay)
+            Debug.DrawRay(position, direction*distance, Color.green);
+        if (debugRayWidth)
+        {
+            Debug.DrawRay(position, Vector2.right * playerWidth, Color.red);
+            Debug.DrawRay(position, Vector2.left * playerWidth, Color.red);
+        }
+            
+
+
+        if (hit.collider != null || hitRight.collider != null || hitLeft.collider != null)
+            groundHit = true;
+        //if (hitRight.collider != null)
+        //    groundHit = true;
+        //if (hitLeft.collider != null)
+        //    groundHit = true;
+        if (groundHit)
         {
             if (landed == false)
             {
                 landed = true;
+                transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
                 PlayLanding();
             }
-            Debug.Log("grounded");
+            //Debug.Log("grounded");
             return true;
         }
-        Debug.Log("notgrouneded");
+        //Debug.Log("notgrouneded");
         return false;
     }
 
-        //private void OnTriggerEnter2D(Collider2D collision)
-        //{
-        //    if (collision.tag == "Platform" && collision != null)
-        //    {
-        //        canCrouch = true;
-        //        _isGrounded = true;
-        //        _velocity.y = 0;
-        //        Debug.Log("collision");
-        //    }
-        //}
-        //
-        //private void OnTriggerExit2D(Collider2D collision)
-        //{
-        //    if (collision.tag == "Platform" && collision != null)
-        //    {
-        //        _isGrounded = false;
-        //        Debug.Log("NOOOO collision");
-        //    }
-        //}
 
-
-        public void ResetY()
-        {
+    public void ResetY()
+    {
         _velocity.y = 0;
-        //_isGrounded = false;
-        }
+    }
 
     public void FlipSprite(bool toRight)
     {

@@ -5,14 +5,17 @@ using UnityEngine;
 public class Waterdrop : MonoBehaviour
 {
     [SerializeField] float dropTimer = 3f;
-    [SerializeField] float tileOffset = 5f;
+    //[SerializeField] float tileOffset = 5f;
     [SerializeField] GameObject dropPrefab;
+    public AudioClip dropSound;
+    private AudioSource audio;
 
     public bool KeepDropping = true;
 
     // Update is called once per frame
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         StartCoroutine(dropWater());
     }
 
@@ -20,7 +23,7 @@ public class Waterdrop : MonoBehaviour
     {
         while (KeepDropping == true)
         {
-            
+            PlayDropSound();
             GameObject waterDrop = Instantiate(
                 dropPrefab,
                 transform.position + new Vector3(0, -1.3f, 0),
@@ -29,5 +32,9 @@ public class Waterdrop : MonoBehaviour
             GameObject.Destroy(waterDrop);
         }
 
+    }
+    public void PlayDropSound()
+    {
+        audio.PlayOneShot(dropSound);
     }
 }

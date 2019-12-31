@@ -39,7 +39,7 @@ public class CameraBehaviour : MonoBehaviour
     [SerializeField] private YFollowType _yFollowType;
     [Space(5)]
     [SerializeField] private float _yUpperLimit = 2f;
-    [SerializeField] private float _yUpperLimitRate = 2f;
+    //[SerializeField] private float _yUpperLimitRate = 2f;
     [SerializeField] private float _speed = 2f;
     [SerializeField] private float _ungroundedSpeed = 0.5f;
     private bool _cameraUpKey = false;
