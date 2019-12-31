@@ -10,7 +10,7 @@ public class Player2D : MonoBehaviour
     //[SerializeField] private bool _isGrounded = false;
 
     Animator myAnimator;
-    public bool _jumping;
+    //public bool //_jumping;
     public float gravity = 0.1f;
     public GameObject head;
     public float headHeight = 1;
@@ -23,6 +23,7 @@ public class Player2D : MonoBehaviour
     public float distance = 1.45f;
     public AudioClip footStepSound1, footStepSound2, jumpSound, landingSound;
     private AudioSource audio;
+    public bool landed = true;
 
     bool FacingRight = true;
     bool HasTorch = true;
@@ -33,10 +34,10 @@ public class Player2D : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
     }
-    void FixedUpdate()
+    void Update()
     {
-        MovementCalculation();
         CrouchCalculation();
+        MovementCalculation();
     }
 
     public void MovementCalculation()
@@ -49,7 +50,7 @@ public class Player2D : MonoBehaviour
         }
         else
         {
-            myAnimator.SetBool("Idle", false);
+            myAnimator.SetBool("Walking", false);
         }
         if (!IsGrounded())
         {
@@ -65,6 +66,7 @@ public class Player2D : MonoBehaviour
             {
                 Jump();
                 PlayJump();
+                landed = false;
             }
         }
         
@@ -93,7 +95,7 @@ public class Player2D : MonoBehaviour
     public void Jump()
     {
         StopCrouch();
-        _jumping = true;
+        //_jumping = true;
         Debug.Log("JUMP!");
         _velocity.y = _jumpHeight;
     }
@@ -116,7 +118,7 @@ public class Player2D : MonoBehaviour
     IEnumerator JumpRoutine()
     {
         yield return new WaitForSeconds(0.1f);
-        _jumping = false;
+        //_jumping = false;
     }
 
     //public void isGroundedRay()
@@ -143,6 +145,11 @@ public class Player2D : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if (hit.collider != null)
         {
+            if (landed == false)
+            {
+                landed = true;
+                PlayLanding();
+            }
             Debug.Log("grounded");
             return true;
         }
@@ -179,7 +186,7 @@ public class Player2D : MonoBehaviour
 
     public void FlipSprite(bool toRight)
     {
-        if (toRight)
+        if (!toRight)
         {
             FacingRight = true;
             transform.localScale = new Vector2(-0.5f, 0.5f);

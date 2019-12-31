@@ -1389,7 +1389,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.37419748, y: 0.09090233}
+  m_Offset: {x: 0.37419748, y: 0.29158688}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1400,7 +1400,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9794016, y: 11.9388}
+  m_Size: {x: 3.9794016, y: 11.537431}
   m_EdgeRadius: 0
 --- !u!114 &2055211401
 MonoBehaviour:
@@ -1428,11 +1428,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  distance: 3.5
+  distance: 2.9
   footStepSound1: {fileID: 8300000, guid: 718e24b6486c2ed49931366c4cb69b85, type: 3}
   footStepSound2: {fileID: 8300000, guid: a72b08bfed1ac7443a38f1cbf680d75a, type: 3}
   jumpSound: {fileID: 8300000, guid: 349dc101e651f6642b136e00ff789d8e, type: 3}
   landingSound: {fileID: 8300000, guid: a33fcdbba010aa643b873b31a2f3bedf, type: 3}
+  landed: 1
 --- !u!82 &2075816618
 AudioSource:
   m_ObjectHideFlags: 0

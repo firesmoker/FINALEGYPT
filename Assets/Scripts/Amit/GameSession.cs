@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameSession : MonoBehaviour
 {
     int currentSceneIndex;
+    public float yDeathLimit;
+    public GameObject player;
 
     // Use this for initialization
     void Start()
@@ -17,6 +19,14 @@ public class GameSession : MonoBehaviour
             LoadNextScene();
         }
         */
+    }
+
+    private void Update()
+    {
+        if (player.transform.position.y <= yDeathLimit)
+        {
+            GameOver();
+        }
     }
 
     IEnumerator WaitForTime()
