@@ -1465,7 +1465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocity: {x: 0, y: 0, z: 0}
   _speed: 7.5
-  _jumpHeight: 3
+  _jumpHeight: 2.5
   gravity: 0.1
   head: {fileID: 5089605342045234523}
   headHeight: 1
@@ -1486,6 +1486,7 @@ MonoBehaviour:
   debugRay: 1
   debugRayWidth: 1
   playerWidth: 1.19
+  debugHeadWidth: 2
 --- !u!82 &2075816618
 AudioSource:
   m_ObjectHideFlags: 0

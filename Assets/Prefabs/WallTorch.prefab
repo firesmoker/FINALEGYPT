@@ -98,7 +98,7 @@ MonoBehaviour:
   flamePrefab: {fileID: 5159665331255784442, guid: 1cad17b6170bb8c44b5e277490f32056,
     type: 3}
   CanDie: 0
-  offset: {x: 0, y: 1.5, z: 0}
+  offset: {x: 0.12, y: 1.35, z: 0}
   IsOn: 0
 --- !u!58 &4823821530161926739
 CircleCollider2D:

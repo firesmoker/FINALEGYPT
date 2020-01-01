@@ -34,7 +34,7 @@ public class TorchScript : MonoBehaviour
     {
         newFlame = Instantiate(
             flame,
-            transform.position + new Vector3(-0.1f, 0.3f, 0),
+            transform.position + new Vector3(-0.05f, 0.5f, 0),
             Quaternion.identity) as GameObject;
         newFlame.transform.parent = transform;
 
