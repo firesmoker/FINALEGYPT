@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanBurn: 0
+  _myLight: {fileID: 2410235350406910384}
+  _spriteRenderer: {fileID: 6011026145284639219}
 --- !u!95 &6011026144153671489
 Animator:
   serializedVersion: 3
@@ -337,6 +339,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d83ee9e1d9e4e4b989dbc83b9fcde023, type: 3}
+--- !u!1 &2410235350406910384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8221765500806581864, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
+    type: 3}
+  m_PrefabInstance: {fileID: 6011026145467998168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2410235350406910398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8221765500806581862, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,

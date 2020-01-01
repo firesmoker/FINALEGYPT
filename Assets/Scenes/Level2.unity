@@ -6779,7 +6779,7 @@ PrefabInstance:
     - target: {fileID: 837112612745700490, guid: e1c985cdf4d992b41a257680f644c7ed,
         type: 3}
       propertyPath: yDeathLimit
-      value: -80
+      value: -74
       objectReference: {fileID: 0}
     - target: {fileID: 837112612745700491, guid: e1c985cdf4d992b41a257680f644c7ed,
         type: 3}

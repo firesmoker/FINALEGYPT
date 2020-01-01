@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5159665332272328014}
   - component: {fileID: 2414606689343549107}
   - component: {fileID: 5959544702694647162}
+  - component: {fileID: 8616974759714399547}
   m_Layer: 10
   m_Name: WallTorchFlame
   m_TagString: Flame
@@ -120,12 +121,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5159665331255784442}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 175cfbdc308dc2a44b3bb4cd0b12570f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CanBurn: 0
+  _myLight: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
 --- !u!95 &5159665332272328014
 Animator:
   serializedVersion: 3
@@ -263,6 +266,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8616974759714399547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5159665331255784442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e0a7f1430335748bf8cb353f80af0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanBurn: 0
+  _myLight: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
 --- !u!1001 &5159665330898101719
 PrefabInstance:
   m_ObjectHideFlags: 0

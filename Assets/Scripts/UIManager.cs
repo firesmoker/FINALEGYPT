@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoSingleton<UIManager>
 {
     // Start is called before the first frame update
+    //public static int scenePlayerDied = 0;
+
+    //private void Start()
+    //{
+    //    scenePlayerDied = 
+    //}
     public void RestartScene()
     {
         Time.timeScale = 1;
@@ -23,19 +29,23 @@ public class UIManager : MonoSingleton<UIManager>
         SceneManager.LoadScene("Options Screen");
     }
 
+    public void LoadPlayerDiedScene()
+    {
+        SceneManager.LoadScene(GameManager.scenePlayerDied);
+    }
+
     public void LoadNextScene()
     {
         SceneManager.LoadScene(0);
-    }
-
-    public void GameOver()
-    {
-        //WaitForTime();
-        SceneManager.LoadScene("GameOverScene");
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
+
+    //public static void PlayerDeathScene(int sceneIndex)
+    //{
+    //    scenePlayerDied = sceneIndex;
+    //}
 }

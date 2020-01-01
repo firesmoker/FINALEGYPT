@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flame : MonoBehaviour
+public class EnviormentFlame : MonoBehaviour
 {
     //BoxCollider2D myFlame;
 
     [SerializeField] bool CanBurn = false;
     bool isOnFire = true;
-    [SerializeField] private GameObject _myLight;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+    //[SerializeField] private GameObject _myLight;
+    //[SerializeField] private SpriteRenderer _spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         //myFlame = GetComponent<BoxCollider2D>();
-        CanBurn = true;
         StartCoroutine(FlameStart());
     }
 
@@ -23,23 +22,10 @@ public class Flame : MonoBehaviour
     IEnumerator FlameStart()
     {
         yield return new WaitForSeconds(0.2f);
-        if(!isOnFire)
-        {
-            isOnFire = true;
-            _myLight.SetActive(true);
-            _spriteRenderer.enabled = true;
-        }
-    }
-
-    IEnumerator FlameStop()
-    {
-        yield return new WaitForSeconds(0.2f);
-        if (isOnFire)
-        {
-            isOnFire = false;
-            _myLight.SetActive(false);
-            _spriteRenderer.enabled = false;
-        }
+        CanBurn = true;
+        isOnFire = true;
+        //_myLight.SetActive(true);
+        //_spriteRenderer.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,13 +35,11 @@ public class Flame : MonoBehaviour
             Debug.Log("quenched");
             if (gameObject.transform.root != transform)
             {
-
+                //GameManager.GameOver();
                 //Destroy(this.gameObject);
                 //_myLight.SetActive(false);
                 //_spriteRenderer.enabled = false;
-                //isOnFire = false;
-                GameManager.GameOver();
-                StartCoroutine(FlameStop());
+                isOnFire = false;
 
             }
             else
