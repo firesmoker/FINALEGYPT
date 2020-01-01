@@ -128,6 +128,7 @@ MonoBehaviour:
   CanBurn: 0
   _myLight: {fileID: 2410235350406910384}
   _spriteRenderer: {fileID: 6011026145284639219}
+  _flickerSpeed: 0.04
 --- !u!95 &6011026144153671489
 Animator:
   serializedVersion: 3
@@ -346,6 +347,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 1.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221765500806581863, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
+        type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 13.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221765500806581863, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
+        type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 8221765500806581864, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
         type: 3}

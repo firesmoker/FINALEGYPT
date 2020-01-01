@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.LWRP;
 
 public class Flame : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Flame : MonoBehaviour
     bool isOnFire = true;
     [SerializeField] private GameObject _myLight;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    private Light2D _lightComponent;
+    [SerializeField] private float _flickerSpeed = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +20,27 @@ public class Flame : MonoBehaviour
         //myFlame = GetComponent<BoxCollider2D>();
         CanBurn = true;
         StartCoroutine(FlameStart());
+        if (_myLight != null)
+        {
+            _lightComponent = _myLight.GetComponent<Light2D>();
+            Debug.Log("getting light component");
+        }
+
+        if (_lightComponent != null)
+            StartCoroutine(FlickerFlame(_lightComponent));
+        else
+            Debug.Log("light component is null");
     }
 
+    IEnumerator FlickerFlame(Light2D light)
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(_flickerSpeed);
+            light.intensity = Random.Range(1.35f, 1.44f);
+        }
+        
+    }
    
     IEnumerator FlameStart()
     {
@@ -54,7 +76,7 @@ public class Flame : MonoBehaviour
                 //_myLight.SetActive(false);
                 //_spriteRenderer.enabled = false;
                 //isOnFire = false;
-                GameManager.GameOver();
+                //GameManager.GameOver();
                 StartCoroutine(FlameStop());
 
             }

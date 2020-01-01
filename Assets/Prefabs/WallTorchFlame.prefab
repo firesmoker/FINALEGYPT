@@ -9,13 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5159665331255784443}
+  - component: {fileID: 8616974759714399547}
   - component: {fileID: 5159665331255784444}
   - component: {fileID: 5159665331255784445}
-  - component: {fileID: 5159665331255784446}
   - component: {fileID: 5159665332272328014}
   - component: {fileID: 2414606689343549107}
   - component: {fileID: 5959544702694647162}
-  - component: {fileID: 8616974759714399547}
   m_Layer: 10
   m_Name: WallTorchFlame
   m_TagString: Flame
@@ -38,6 +37,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8616974759714399547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5159665331255784442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e0a7f1430335748bf8cb353f80af0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanBurn: 0
+  _myLight: {fileID: 3856000891747773375}
+  _spriteRenderer: {fileID: 5159665331255784444}
+  _flickerSpeed: 0.1
+  _increaseSpeed: 0.02
+  _maxIntesity: 1.5
+  _intesityIncrement: 0.1
 --- !u!212 &5159665331255784444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114,21 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8685634, y: 1.5837568}
   m_EdgeRadius: 0
---- !u!114 &5159665331255784446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5159665331255784442}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 175cfbdc308dc2a44b3bb4cd0b12570f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanBurn: 0
-  _myLight: {fileID: 0}
-  _spriteRenderer: {fileID: 0}
 --- !u!95 &5159665332272328014
 Animator:
   serializedVersion: 3
@@ -266,19 +269,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8616974759714399547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5159665331255784442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33e0a7f1430335748bf8cb353f80af0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanBurn: 0
 --- !u!1001 &5159665330898101719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,8 +371,19 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8221765500806581864, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d83ee9e1d9e4e4b989dbc83b9fcde023, type: 3}
+--- !u!1 &3856000891747773375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8221765500806581864, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
+    type: 3}
+  m_PrefabInstance: {fileID: 5159665330898101719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3856000891747773361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8221765500806581862, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
