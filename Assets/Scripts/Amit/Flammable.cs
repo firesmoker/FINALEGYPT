@@ -26,7 +26,9 @@ public class Flammable : MonoBehaviour
             GameObject Flame = Instantiate(
                 flamePrefab,
                 transform.position + offset,
-                Quaternion.identity) as GameObject;
+                Quaternion.identity, this.gameObject.transform);
+            //Vector3 newSize = Flame.transform.localScale*2;
+            Flame.transform.localScale = Flame.transform.localScale * 2;
             if (CanDie)
             {
                 StartCoroutine(KillAfterTime(Flame));
@@ -38,8 +40,9 @@ public class Flammable : MonoBehaviour
 
     IEnumerator KillAfterTime(GameObject flame)
     {
+        IsOn = false;
         yield return new WaitForSeconds(3);
         Destroy(flame);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

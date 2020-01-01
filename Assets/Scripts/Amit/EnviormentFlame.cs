@@ -106,14 +106,17 @@ public class EnviormentFlame : MonoBehaviour
             if (this.tag == "Flame")
             {
                 //GameManager.GameOver();
-                //Destroy(this.gameObject);
+                Flammable parentFlammable = GetComponentInParent<Flammable>();
+                if (parentFlammable != null)
+                    parentFlammable.IsOn = false;
+                Destroy(this.gameObject);
                 //_myLight.SetActive(false);
                 //_spriteRenderer.enabled = false;
                 //isOnFire = false;
                 //if (_myLight != null)
                 //    _myLight.SetActive(false);
-                StartCoroutine(FlameStop());
-                Debug.Log("startedcortouine");
+                //StartCoroutine(FlameStop());
+                //Debug.Log("startedcortouine");
 
             }
             else

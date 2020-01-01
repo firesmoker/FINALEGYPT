@@ -77,6 +77,7 @@ public class Flame : MonoBehaviour
                 //_spriteRenderer.enabled = false;
                 //isOnFire = false;
                 //GameManager.GameOver();
+
                 StartCoroutine(FlameStop());
 
             }
