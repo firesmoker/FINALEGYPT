@@ -16,7 +16,7 @@ public class GameManager : MonoSingleton<GameManager>
     void Start()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if(currentSceneIndex != 0)
+        if(currentSceneIndex != 1)
         {
             scenePlayerDied = currentSceneIndex;
             audio = GetComponent<AudioSource>();

@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9133e0487e15bd4983372c9dc53d56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yDeathLimit: -10
+  currentSceneIndex: 0
+  yDeathLimit: -74
   player: {fileID: 0}
   bgMusic: {fileID: 8300000, guid: c037880e1c6c26644b3efc69413afea5, type: 3}
 --- !u!82 &837112612745700489
@@ -62,7 +63,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

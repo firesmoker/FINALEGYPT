@@ -26,6 +26,7 @@ public class Player2D : MonoBehaviour
     public bool debugRay = true;
     public bool debugRayWidth = true;
     public float playerWidth = 4f;
+    public float debugHeadWidth = 2f;
 
     bool FacingRight = true;
     bool HasTorch = true;
@@ -36,7 +37,7 @@ public class Player2D : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
     }
-    void Update()
+    void FixedUpdate()
     {
         CrouchCalculation();
         MovementCalculation();
@@ -115,7 +116,13 @@ public class Player2D : MonoBehaviour
         Vector2 direction = Vector2.up;
         RaycastHit2D hit = Physics2D.Raycast(position, direction, headBumpHeight, groundLayer);
         if (debugRay)
+        {
             Debug.DrawRay(position, direction * headBumpHeight, Color.blue);
+            Vector2 positionEnd = new Vector2(position.x, position.y + headBumpHeight);
+            Debug.DrawRay(positionEnd, Vector2.right* debugHeadWidth, Color.blue);
+            Debug.DrawRay(positionEnd, Vector2.left * debugHeadWidth, Color.blue);
+        }
+            
         if (hit.collider != null)
             _velocity.y -= 1;
     }
@@ -133,7 +140,11 @@ public class Player2D : MonoBehaviour
         RaycastHit2D hitLeft = Physics2D.Raycast(leftPosition, direction, distance, groundLayer);
         bool groundHit = false;
         if (debugRay)
-            Debug.DrawRay(position, direction*distance, Color.green);
+        {
+            Vector2 originalPosition = new Vector2(position.x, position.y + 2.79f);
+            Debug.DrawRay(originalPosition, direction * 2.79f, Color.red);
+        }
+            
         if (debugRayWidth)
         {
             Debug.DrawRay(position, Vector2.right * playerWidth, Color.red);
