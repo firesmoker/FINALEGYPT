@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eab43d3e3ab3341a47e17c17f0cc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flamePrefab: {fileID: 6011026145284639221, guid: a4431f14f4209314ca0dfddba4f68712,
+  flamePrefab: {fileID: 5159665331255784442, guid: 1cad17b6170bb8c44b5e277490f32056,
     type: 3}
   CanDie: 0
   offset: {x: 0, y: 1.5, z: 0}
