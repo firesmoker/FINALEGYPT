@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoSingleton<UIManager>
 {
+    //public GameObject panel;
+    public Image panelImage;
+
     // Start is called before the first frame update
     //public static int scenePlayerDied = 0;
 

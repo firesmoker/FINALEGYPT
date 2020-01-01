@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 8221765500806581862, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.52
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 8221765500806581862, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
         type: 3}
@@ -328,45 +328,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 3.1720002
       objectReference: {fileID: 0}
-    - target: {fileID: 8221765500806581863, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.7882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 8221765500806581863, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8221765500806581863, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.43137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 8221765500806581863, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 1.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 8221765500806581863, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
-        type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 13.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 8221765500806581863, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
-        type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.83
-      objectReference: {fileID: 0}
     - target: {fileID: 8221765500806581864, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
         type: 3}
       propertyPath: m_Name
       value: Point Light 2D
-      objectReference: {fileID: 0}
-    - target: {fileID: 8221765500806581864, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d83ee9e1d9e4e4b989dbc83b9fcde023, type: 3}

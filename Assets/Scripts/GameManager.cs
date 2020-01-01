@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.PostProcessing;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoSingleton<GameManager>
     public AudioClip bgMusic;
     private AudioSource audio;
     public static int scenePlayerDied;
+    //public PostProcessVolume postProcessVolume;
 
     // Use this for initialization
     void Start()
@@ -80,6 +82,23 @@ public class GameManager : MonoSingleton<GameManager>
     //    UIManager.scenePlayerDied = sceneIndex;
     //    SceneManager.LoadScene("GameOverScene");
     //}
+    
+    //IEnumerator FadeToBlack(float time)
+    //{
+    //    //f(postProcessVolume != null)
+    //    //
+    //    //   ColorParameter colorFillter = postProcessVolume.GetComponent<ColorGrading>().colorFilter;
+    //    //   while (colorFillter.value.grayscale > 0)
+    //    //   {
+    //    //       yield return new WaitForSeconds(time);
+    //    //       Color color = colorFillter.value;
+    //    //       color.in
+    //    //       colorFillter.value = color;
+    //    //
+    //    //   }
+    //    //
+    //}
+
     public static void GameOver(float delay)
     {
         SceneManager.LoadScene("GameOverScene");
