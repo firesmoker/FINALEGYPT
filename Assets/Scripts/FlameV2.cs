@@ -20,6 +20,7 @@ public class FlameV2 : MonoBehaviour
     [SerializeField] private float _maxIntesity = 1.5f;
     [SerializeField] private float _intesityIncrement = 1.5f;
     public bool burnsOthers = false;
+    [SerializeField] bool hurtsPlayer = false;
 
     void Start()
     {
@@ -40,35 +41,77 @@ public class FlameV2 : MonoBehaviour
     {
         if(collision != myFlammable)
         {
-            //Debug.Log("collision between flame and flammable");
             string collisionTag = collision.tag;
-            if (collisionTag == "Quench" && state == State.on)
+            switch (collisionTag)
             {
-                Debug.Log("quenched");
-                if (type == Type.playerTorch)
-                    GameManager.GameOver();
-                FlameStop();
+                case ("Quench"):
+                    if (state == State.on)
+                    {
+                        Debug.Log("quenched");
+                        if (type == Type.playerTorch)
+                            GameManager.GameOver();
+                        FlameStop();
+                    }
+                    break;
+                case ("Flammable"):
+                    if (state == State.on && burnsOthers)
+                    {
+                        Debug.Log("touching flamable");
+                        Flammable flammable = collision.gameObject.GetComponent<Flammable>();
+                        if (!flammable.IsOn)
+                        {
+                            Debug.Log("started flameon");
+                            flammable.FlameOn();
+                            if (flammable.oneTimeUse && !flammable.isFading)
+                            {
+                                Debug.Log("FADETODEATH");
+                                //StartCoroutine(flammable.FadeToDeath());
+                                flammable.StartFadeToDeath();
+                            }
+
+                        }
+                    }
+                    break;
+                case ("Player"):
+                    if (state == State.on && hurtsPlayer)
+                    {
+                        Player2D player = collision.GetComponent<Player2D>();
+                        if (player != null)
+                            GameManager.GameOver();
+                    }
+                    break;
             }
 
-            if (collision.gameObject.CompareTag("Flammable") && state == State.on && burnsOthers)
-            {
-                Debug.Log("touching flamable");
-                Flammable flammable = collision.gameObject.GetComponent<Flammable>();
-                if (!flammable.IsOn)
-                {
-                    Debug.Log("started flameon");
-                    flammable.FlameOn();
-                    if (flammable.oneTimeUse && !flammable.isFading)
-                    {
-                        Debug.Log("FADETODEATH");
-                        //StartCoroutine(flammable.FadeToDeath());
-                        flammable.StartFadeToDeath();
-                    }
-                        
-                }
-            }
         }
     }
+
+    //Debug.Log("collision between flame and flammable");
+    //string collisionTag = collision.tag;
+    //if (state == State.on)
+    //{
+    //    Debug.Log("quenched");
+    //    if (type == Type.playerTorch)
+    //        GameManager.GameOver();
+    //    FlameStop();
+    //}
+
+    // if (collision.gameObject.CompareTag("Flammable") && state == State.on && burnsOthers)
+    // {
+    //     Debug.Log("touching flamable");
+    //     Flammable flammable = collision.gameObject.GetComponent<Flammable>();
+    //     if (!flammable.IsOn)
+    //     {
+    //         Debug.Log("started flameon");
+    //         flammable.FlameOn();
+    //         if (flammable.oneTimeUse && !flammable.isFading)
+    //         {
+    //             Debug.Log("FADETODEATH");
+    //             //StartCoroutine(flammable.FadeToDeath());
+    //             flammable.StartFadeToDeath();
+    //         }
+    //             
+    //     }
+    // }
 
     private void OnTriggerStay2D(Collider2D collision)
     {

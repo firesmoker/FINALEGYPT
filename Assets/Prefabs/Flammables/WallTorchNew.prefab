@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2741d5002272b714383b5f9588bd033e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,6 +101,9 @@ MonoBehaviour:
   offset: {x: 0.12, y: 1.35, z: 0}
   IsOn: 0
   flameOnGameStart: 0
+  _fadeRate: 0.1
+  _oneTimeUse: 0
+  _flameScaleOffset: 2
 --- !u!58 &129317395879143805
 CircleCollider2D:
   m_ObjectHideFlags: 0
