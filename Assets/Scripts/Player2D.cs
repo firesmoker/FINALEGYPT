@@ -76,7 +76,7 @@ public class Player2D : MonoBehaviour
         {
             _velocity.y = 0;
             canCrouch = true;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 Jump();
                 PlayJump();

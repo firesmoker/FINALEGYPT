@@ -149,6 +149,9 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   IsOn: 0
   flameOnGameStart: 0
+  _fadeRate: 0.1
+  _oneTimeUse: 1
+  _flameScaleOffset: 2
 --- !u!61 &6097070680775120035
 BoxCollider2D:
   m_ObjectHideFlags: 0

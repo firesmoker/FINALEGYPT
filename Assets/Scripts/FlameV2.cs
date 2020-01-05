@@ -61,7 +61,8 @@ public class FlameV2 : MonoBehaviour
                     if (flammable.oneTimeUse && !flammable.isFading)
                     {
                         Debug.Log("FADETODEATH");
-                        StartCoroutine(flammable.FadeToDeath());
+                        //StartCoroutine(flammable.FadeToDeath());
+                        flammable.StartFadeToDeath();
                     }
                         
                 }
@@ -80,7 +81,8 @@ public class FlameV2 : MonoBehaviour
                 if (flammable.oneTimeUse && !flammable.isFading)
                 {
                     Debug.Log("FADETODEATH");
-                    StartCoroutine(flammable.FadeToDeath());
+                    //StartCoroutine(flammable.FadeToDeath());
+                    flammable.StartFadeToDeath();
                 }
                     
             }

@@ -72,6 +72,11 @@ public class Flammable : MonoBehaviour
     }
 
 
+    public void StartFadeToDeath()
+    {
+        StartCoroutine(FadeToDeath());
+    }
+
     public IEnumerator FadeToDeath()
     {
         if(_spriteRenderer != null)
