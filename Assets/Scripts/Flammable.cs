@@ -8,7 +8,6 @@ public class Flammable : MonoBehaviour
     [SerializeField] GameObject flamePrefab;
     [SerializeField] bool CanDie = false;
     bool flameCreated = false;
-    //Flammable myFlammable;
     [SerializeField] Vector3 offset;
     public bool IsOn = false;
     GameObject flame;
@@ -32,7 +31,6 @@ public class Flammable : MonoBehaviour
                 flamePrefab,
                 transform.position + offset,
                 Quaternion.identity, this.gameObject.transform);
-            //Vector3 newSize = Flame.transform.localScale*2;
             flame.transform.localScale = flame.transform.localScale * 2;
             if (CanDie)
             {
@@ -45,7 +43,6 @@ public class Flammable : MonoBehaviour
             if (flame != null)
             {
                 FlameV2 flameComponenet = GetComponentInChildren<FlameV2>();
-                //StartCoroutine(flameComponenet.FlameStart());
                 flameComponenet.FlameStart();
             }
             else
@@ -59,6 +56,5 @@ public class Flammable : MonoBehaviour
         IsOn = false;
         yield return new WaitForSeconds(3);
         Destroy(flame);
-        //Destroy(gameObject);
     }
 }

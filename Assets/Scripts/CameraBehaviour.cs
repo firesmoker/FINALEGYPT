@@ -10,8 +10,6 @@ public class CameraBehaviour : MonoBehaviour
     private float _fixedPosition;
     private enum Type { None, Main, Secondary }
     [SerializeField] private Type _type;
-    [SerializeField] private bool _isMain;
-    [SerializeField] private bool _isSecondary;
     [SerializeField] private GameObject _player;
     private float _offsetHTemp = 0;
     private float _offsetVTemp = 0;

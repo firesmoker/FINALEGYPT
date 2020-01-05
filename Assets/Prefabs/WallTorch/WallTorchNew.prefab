@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 129317395879143807}
   - component: {fileID: 129317395879143744}
   - component: {fileID: 129317395879143805}
-  - component: {fileID: 129317395879143804}
+  - component: {fileID: 5382716099200711469}
   m_Layer: 0
   m_Name: WallTorchNew
   m_TagString: Flammable
@@ -100,6 +100,7 @@ MonoBehaviour:
   CanDie: 0
   offset: {x: 0.12, y: 1.35, z: 0}
   IsOn: 0
+  flameOnGameStart: 0
 --- !u!58 &129317395879143805
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -113,18 +114,27 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.24282852, y: 1.5418601}
+  m_Offset: {x: 0.24282849, y: 1.5376539}
   serializedVersion: 2
-  m_Radius: 0.3412589
---- !u!114 &129317395879143804
-MonoBehaviour:
+  m_Radius: 0.43379474
+--- !u!50 &5382716099200711469
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129317395879143745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a6c04497dbcbd4e8d93215fd3d7f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 0

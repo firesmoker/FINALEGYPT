@@ -6,14 +6,11 @@ public class Drop : MonoBehaviour
 {
     Animator myAnimator;
     Rigidbody2D myRigidbody2D;
-    //public AudioClip dropSound;
-    //private AudioSource audio;
 
     private void Start()
     {
         myAnimator = GetComponent<Animator>();
         myRigidbody2D = GetComponent<Rigidbody2D>();
-        //audio = GetComponent<AudioSource>();
     }
 
     
@@ -30,10 +27,4 @@ public class Drop : MonoBehaviour
         myAnimator.SetBool("Hit", false);
         Destroy(this.gameObject);
     }
-
-   // public void PlayDropSound()
-   // {
-   //     audio.PlayOneShot(dropSound);
-   // }
-
 }

@@ -11,7 +11,6 @@ public class FlameV2 : MonoBehaviour
     enum Type{playerTorch, wallTorch, other}
     [SerializeField] State state;
     [SerializeField] Type type;
-
     [SerializeField] private GameObject _myLight;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     private Light2D _lightComponent;
@@ -32,11 +31,8 @@ public class FlameV2 : MonoBehaviour
             _lightComponent = _myLight.GetComponent<Light2D>();
             Debug.Log("getting light component");
         }
-        //if (_lightComponent != null)
-        //    StartCoroutine(FlickerFlame(_lightComponent));
         else
             Debug.Log("light component is null");
-        //StartCoroutine(FlameStart());
         FlameStart();
     }
 
@@ -51,7 +47,6 @@ public class FlameV2 : MonoBehaviour
                 Debug.Log("quenched");
                 if (type == Type.playerTorch)
                     GameManager.GameOver();
-                //StartCoroutine(FlameStop());
                 FlameStop();
             }
 
@@ -69,7 +64,7 @@ public class FlameV2 : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(burnsOthers)
+        if (burnsOthers && collision.CompareTag("Flammable"))
         {
             Debug.Log("touching flamable");
             Flammable flammable = collision.gameObject.GetComponent<Flammable>();
@@ -83,15 +78,25 @@ public class FlameV2 : MonoBehaviour
 
     IEnumerator IncreasingFlame(Light2D light)
     {
+        Color color = _spriteRenderer.color;
+        color.a = 0f;
+        _spriteRenderer.color = color;
         bool finishedIncreasing = false;
         light.intensity = 0.1f;
         while (light.intensity < _maxIntesity)
         {
             yield return new WaitForSeconds(_increaseSpeed);
             light.intensity += _intesityIncrement;
+            color.a += 0.05f;
+            _spriteRenderer.color = color;
         }
         if (light.intensity >= _maxIntesity)
+        {
             finishedIncreasing = true;
+            color.a = 1;
+            _spriteRenderer.color = color;
+        }
+            
         while (finishedIncreasing && state == State.on)
         {
             burnsOthers = true;
@@ -100,30 +105,6 @@ public class FlameV2 : MonoBehaviour
         }
 
     }
-
-    IEnumerator FlickerFlame(Light2D light)
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(_flickerSpeed);
-            light.intensity = Random.Range(1.35f, 1.44f);
-        }
-
-    }
-
-    //public IEnumerator FlameStart()
-    //{
-    //    yield return new WaitForSeconds(0.2f);
-    //    if (state != State.on)
-    //    {
-    //        state = State.on;
-    //        _myLight.SetActive(true);
-    //        _spriteRenderer.enabled = true;
-    //        if (!myFlammable.IsOn)
-    //            myFlammable.IsOn = true;
-    //        StartCoroutine(IncreasingFlame(_lightComponent));
-    //    }
-    //}
 
     public void FlameStart()
     {
@@ -137,26 +118,6 @@ public class FlameV2 : MonoBehaviour
             StartCoroutine(IncreasingFlame(_lightComponent));
         }
     }
-
-    IEnumerator StateOnDelay()
-    {
-        yield return new WaitForSeconds(2f);
-        state = State.on;
-    }
-
-   // IEnumerator FlameStop()
-   // {
-   //     yield return new WaitForSeconds(0.2f);
-   //     if (state != State.off)
-   //     {
-   //         if (myFlammable.IsOn)
-   //             myFlammable.IsOn = false;
-   //         state = State.off;
-   //         _myLight.SetActive(false);
-   //         _spriteRenderer.enabled = false;
-   //         
-   //     }
-   // }
 
     public void FlameStop()
     {

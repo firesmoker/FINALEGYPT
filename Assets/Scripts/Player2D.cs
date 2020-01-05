@@ -27,6 +27,8 @@ public class Player2D : MonoBehaviour
     public bool debugRayWidth = true;
     public float playerWidth = 4f;
     public float debugHeadWidth = 2f;
+    private float _previousY;
+    private float _currentY;
 
     bool FacingRight = true;
     bool HasTorch = true;
@@ -36,6 +38,8 @@ public class Player2D : MonoBehaviour
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        _previousY = transform.position.y;
+        _currentY = transform.position.y;
     }
     void FixedUpdate()
     {
@@ -45,6 +49,8 @@ public class Player2D : MonoBehaviour
 
     public void MovementCalculation()
     {
+        
+        bool isGrounded = IsGrounded();
         float horizontalInput = Input.GetAxis("Horizontal");
         _velocity.x = horizontalInput;
         if(_velocity.x != 0)
@@ -55,13 +61,18 @@ public class Player2D : MonoBehaviour
         {
             myAnimator.SetBool("Walking", false);
         }
-        if (!IsGrounded())
+        if (!isGrounded)
         {
             canCrouch = false;
             _velocity.y -= gravity;
+            // _previousY = _currentY;
+            // _currentY = transform.position.y;
+            // if (_currentY == _previousY)
+            //     _velocity.y = 0f;
+            StartCoroutine(StuckCheck());
         }
 
-        else if (IsGrounded())
+        else if (isGrounded)
         {
             _velocity.y = 0;
             canCrouch = true;
@@ -74,6 +85,15 @@ public class Player2D : MonoBehaviour
         }
         HeadBump();
         myRigidbody2D.velocity = (_velocity * _speed);
+    }
+
+    IEnumerator StuckCheck()
+    {
+        _previousY = transform.position.y;
+        yield return new WaitForSeconds(1f);
+        _currentY = transform.position.y;
+        if (_currentY == _previousY)
+            _velocity.y = 0f;
     }
 
     public void CrouchCalculation()
@@ -155,16 +175,12 @@ public class Player2D : MonoBehaviour
 
         if (hit.collider != null || hitRight.collider != null || hitLeft.collider != null)
             groundHit = true;
-        //if (hitRight.collider != null)
-        //    groundHit = true;
-        //if (hitLeft.collider != null)
-        //    groundHit = true;
         if (groundHit)
         {
             if (landed == false)
             {
                 landed = true;
-                transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
                 PlayLanding();
             }
             //Debug.Log("grounded");
