@@ -40,7 +40,7 @@ public class FlameV2 : MonoBehaviour
     {
         if(collision != myFlammable)
         {
-            Debug.Log("collision between flame and flammable");
+            //Debug.Log("collision between flame and flammable");
             string collisionTag = collision.tag;
             if (collisionTag == "Quench" && state == State.on)
             {
@@ -56,7 +56,14 @@ public class FlameV2 : MonoBehaviour
                 Flammable flammable = collision.gameObject.GetComponent<Flammable>();
                 if (!flammable.IsOn)
                 {
+                    Debug.Log("started flameon");
                     flammable.FlameOn();
+                    if (flammable.oneTimeUse && !flammable.isFading)
+                    {
+                        Debug.Log("FADETODEATH");
+                        StartCoroutine(flammable.FadeToDeath());
+                    }
+                        
                 }
             }
         }
@@ -66,11 +73,16 @@ public class FlameV2 : MonoBehaviour
     {
         if (burnsOthers && collision.CompareTag("Flammable"))
         {
-            Debug.Log("touching flamable");
             Flammable flammable = collision.gameObject.GetComponent<Flammable>();
             if (!flammable.IsOn)
             {
                 flammable.FlameOn();
+                if (flammable.oneTimeUse && !flammable.isFading)
+                {
+                    Debug.Log("FADETODEATH");
+                    StartCoroutine(flammable.FadeToDeath());
+                }
+                    
             }
         }
 
