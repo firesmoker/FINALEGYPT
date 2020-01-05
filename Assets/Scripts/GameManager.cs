@@ -10,7 +10,7 @@ public class GameManager : MonoSingleton<GameManager>
     public float yDeathLimit;
     public GameObject player;
     public AudioClip bgMusic;
-    private AudioSource audio;
+    private AudioSource audioSource;
     public static int scenePlayerDied;
     //public PostProcessVolume postProcessVolume;
 
@@ -21,9 +21,9 @@ public class GameManager : MonoSingleton<GameManager>
         if(currentSceneIndex != 1)
         {
             scenePlayerDied = currentSceneIndex;
-            audio = GetComponent<AudioSource>();
-            audio.clip = bgMusic;
-            audio.Play();
+            audioSource = GetComponent<AudioSource>();
+            audioSource.clip = bgMusic;
+            audioSource.Play();
         }
     }
 

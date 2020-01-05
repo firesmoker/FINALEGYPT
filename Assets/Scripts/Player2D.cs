@@ -15,13 +15,13 @@ public class Player2D : MonoBehaviour
     public float headDown = 0.2f;
     public bool canCrouch = true;
     public bool crouching = false;
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D myRigidbody2D;
     public bool touchingGround;
     public LayerMask groundLayer;
     public float distance;
     public float headBumpHeight;
     public AudioClip footStepSound1, footStepSound2, jumpSound, landingSound;
-    private AudioSource audio;
+    private AudioSource audioSource;
     public bool landed = true;
     public bool debugRay = true;
     public bool debugRayWidth = true;
@@ -33,9 +33,9 @@ public class Player2D : MonoBehaviour
 
     private void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        myRigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
     void FixedUpdate()
     {
@@ -73,7 +73,7 @@ public class Player2D : MonoBehaviour
             }
         }
         HeadBump();
-        rigidbody2D.velocity = (_velocity * _speed);
+        myRigidbody2D.velocity = (_velocity * _speed);
     }
 
     public void CrouchCalculation()
@@ -217,21 +217,21 @@ public class Player2D : MonoBehaviour
         if(IsGrounded())
         {
             if (i == 1)
-                audio.PlayOneShot(footStepSound1);
+                audioSource.PlayOneShot(footStepSound1);
             else if (i == 2)
-                audio.PlayOneShot(footStepSound2);
+                audioSource.PlayOneShot(footStepSound2);
         }
         
     }
 
     public void PlayJump()
     {
-        audio.PlayOneShot(jumpSound);
+        audioSource.PlayOneShot(jumpSound);
     }
 
     public void PlayLanding()
     {
-        audio.PlayOneShot(landingSound);
+        audioSource.PlayOneShot(landingSound);
     }
 
 }

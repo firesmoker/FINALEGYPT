@@ -8,14 +8,14 @@ public class Waterdrop : MonoBehaviour
     //[SerializeField] float tileOffset = 5f;
     [SerializeField] GameObject dropPrefab;
     public AudioClip dropSound;
-    private AudioSource audio;
+    private AudioSource audioSource;
 
     public bool KeepDropping = true;
 
     // Update is called once per frame
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(dropWater());
     }
 
@@ -27,7 +27,7 @@ public class Waterdrop : MonoBehaviour
             GameObject waterDrop = Instantiate(
                 dropPrefab,
                 transform.position + new Vector3(0, -1.3f, 0),
-                Quaternion.identity) as GameObject;
+                Quaternion.identity, this.gameObject.transform);
             yield return new WaitForSeconds(dropTimer);
             GameObject.Destroy(waterDrop);
         }
@@ -35,6 +35,6 @@ public class Waterdrop : MonoBehaviour
     }
     public void PlayDropSound()
     {
-        audio.PlayOneShot(dropSound);
+        audioSource.PlayOneShot(dropSound);
     }
 }
