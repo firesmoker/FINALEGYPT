@@ -51,12 +51,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 1
   type: 2
-  _myLight: {fileID: 0}
-  _spriteRenderer: {fileID: 0}
+  _myLight: {fileID: 8909393529891443752}
+  _spriteRenderer: {fileID: 701737044279741547}
   _flickerSpeed: 0.1
-  _increaseSpeed: 0.1
+  _increaseSpeed: 0.05
   _maxIntesity: 1.5
-  _intesityIncrement: 1.5
+  _intesityIncrement: 0.22
   burnsOthers: 0
 --- !u!212 &701737044279741547
 SpriteRenderer:
@@ -340,6 +340,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d83ee9e1d9e4e4b989dbc83b9fcde023, type: 3}
+--- !u!1 &8909393529891443752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8221765500806581864, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
+    type: 3}
+  m_PrefabInstance: {fileID: 701737044102388288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8909393529891443750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8221765500806581862, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,

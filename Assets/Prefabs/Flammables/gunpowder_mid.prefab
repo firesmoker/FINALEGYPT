@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865804499}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.92, y: 0.43, z: 0}
+  m_LocalPosition: {x: 3.41, y: 0.43, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 8295808235785414534}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eab43d3e3ab3341a47e17c17f0cc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flamePrefab: {fileID: 5679193495933249719, guid: 2a296e95de08fca49aebdd9519a69731,
+  flamePrefab: {fileID: 3544481326932084724, guid: 9d99a7fd1418f50409aeddd1775902d9,
     type: 3}
   CanDie: 0
   offset: {x: 0, y: 0.23, z: 0}
@@ -128,7 +128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932200520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0700006, y: 0.43, z: 0}
+  m_LocalPosition: {x: -3.42, y: 0.43, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 8295808235785414534}
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eab43d3e3ab3341a47e17c17f0cc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flamePrefab: {fileID: 5679193495933249719, guid: 2a296e95de08fca49aebdd9519a69731,
+  flamePrefab: {fileID: 3544481326932084724, guid: 9d99a7fd1418f50409aeddd1775902d9,
     type: 3}
   CanDie: 0
   offset: {x: 0, y: 0.23, z: 0}
@@ -229,7 +229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101713460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.29, y: 0.43, z: 0}
+  m_LocalPosition: {x: 0.02, y: 0.43, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 8295808235785414534}
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eab43d3e3ab3341a47e17c17f0cc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flamePrefab: {fileID: 5679193495933249719, guid: 2a296e95de08fca49aebdd9519a69731,
+  flamePrefab: {fileID: 3544481326932084724, guid: 9d99a7fd1418f50409aeddd1775902d9,
     type: 3}
   CanDie: 0
   offset: {x: 0, y: 0.23, z: 0}
@@ -313,6 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8295808235785414534}
   - component: {fileID: 8295808235785414537}
+  - component: {fileID: 145820894}
   m_Layer: 0
   m_Name: gunpowder_mid
   m_TagString: Flammable
@@ -329,7 +330,7 @@ Transform:
   m_GameObject: {fileID: 8295808235785414538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.53, y: 0.39, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.29075348, y: 0.25, z: 1}
   m_Children:
   - {fileID: 865804503}
   - {fileID: 2101713461}
@@ -386,3 +387,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &145820894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8295808235785414538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d72b9bfab326d46ac09a7495770f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyIfEmpty: 1
