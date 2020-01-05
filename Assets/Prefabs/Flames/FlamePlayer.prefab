@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  type: 2
+  type: 0
   _myLight: {fileID: 4380058829516075250}
   _spriteRenderer: {fileID: 5679193495933249713}
   _flickerSpeed: 0.1

@@ -20,6 +20,7 @@ public class FlameV2 : MonoBehaviour
     [SerializeField] private float _increaseSpeed = 0.1f;
     [SerializeField] private float _maxIntesity = 1.5f;
     [SerializeField] private float _intesityIncrement = 1.5f;
+    public bool burnsOthers = false;
 
     void Start()
     {
@@ -54,7 +55,7 @@ public class FlameV2 : MonoBehaviour
                 FlameStop();
             }
 
-            if (collision.gameObject.CompareTag("Flammable") && state == State.on)
+            if (collision.gameObject.CompareTag("Flammable") && state == State.on && burnsOthers)
             {
                 Debug.Log("touching flamable");
                 Flammable flammable = collision.gameObject.GetComponent<Flammable>();
@@ -64,6 +65,20 @@ public class FlameV2 : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(burnsOthers)
+        {
+            Debug.Log("touching flamable");
+            Flammable flammable = collision.gameObject.GetComponent<Flammable>();
+            if (!flammable.IsOn)
+            {
+                flammable.FlameOn();
+            }
+        }
+
     }
 
     IEnumerator IncreasingFlame(Light2D light)
@@ -79,6 +94,7 @@ public class FlameV2 : MonoBehaviour
             finishedIncreasing = true;
         while (finishedIncreasing && state == State.on)
         {
+            burnsOthers = true;
             yield return new WaitForSeconds(_flickerSpeed);
             light.intensity = Random.Range(1.35f, 1.55f);
         }
@@ -122,6 +138,12 @@ public class FlameV2 : MonoBehaviour
         }
     }
 
+    IEnumerator StateOnDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        state = State.on;
+    }
+
    // IEnumerator FlameStop()
    // {
    //     yield return new WaitForSeconds(0.2f);
@@ -140,6 +162,7 @@ public class FlameV2 : MonoBehaviour
     {
         if (state != State.off)
         {
+            burnsOthers = false;
             if (myFlammable.IsOn)
                 myFlammable.IsOn = false;
             state = State.off;
