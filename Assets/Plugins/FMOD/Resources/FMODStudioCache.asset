@@ -69,14 +69,14 @@ MonoBehaviour:
   Path: event:/Music
   guid: 07308f6ce04109409fd00472b5290422
   Banks:
-  - {fileID: -5530640316438397074}
-  IsStream: 0
+  - {fileID: 3941615235260709416}
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 46779
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,15 +91,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 558921965016605047}
-  - {fileID: -5530640316438397074}
+  - {fileID: 3941615235260709416}
   EditorEvents:
   - {fileID: -1477611401119327398}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -5530640316438397074}
+  - {fileID: 3941615235260709416}
   StringsBanks:
   - {fileID: 558921965016605047}
-  stringsBankWriteTime: 637139049162565126
+  stringsBankWriteTime: 637139192684385660
   cacheVersion: 3
 --- !u!114 &558921965016605047
 MonoBehaviour:
@@ -115,11 +115,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/egyptFmod/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637139049162565126
+  lastModified: 637139192684385660
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 730
+  Exists: 1
+--- !u!114 &3941615235260709416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637139192684375686
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &7315691274100257601
 MonoBehaviour:

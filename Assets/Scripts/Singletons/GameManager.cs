@@ -6,6 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    static FMOD.Studio.EventInstance bgFmodMusic;
     public int currentSceneIndex;
     private static float _yDeathLimit = -30f;
     public static float yDeathLimit
@@ -16,50 +17,46 @@ public class GameManager : MonoSingleton<GameManager>
         }
     }
     public GameObject player;
+    public GameObject bg;
     public AudioClip bgMusic;
     private AudioSource audioSource;
     public static int scenePlayerDied;
-    //public PostProcessVolume postProcessVolume;
 
-    // Use this for initialization
     void Start()
     {
         if(GameObject.Find("Background Music") == null)
         {
-            GameObject bg = new GameObject("Background Music");
+            bg = new GameObject("Background Music");
             DontDestroyOnLoad(bg);
-            AudioSource bgAudio = bg.AddComponent<AudioSource>();
+            bgFmodMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(bgFmodMusic, bg.GetComponent<Transform>(), bg.GetComponent<Rigidbody2D>());
             currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             if (currentSceneIndex != 1)
             {
-                bgAudio.clip = bgMusic;
-                bgAudio.loop = true;
-                bgAudio.Play();
+                bgFmodMusic.start();
             }
         }
+        else
+        {
+            bg = GameObject.Find("Background Music");
             
-        
+            FMOD.Studio.PLAYBACK_STATE playbackState;
+            bgFmodMusic.getPlaybackState(out playbackState);
+            bool isPlaying = playbackState != FMOD.Studio.PLAYBACK_STATE.STOPPED;
+            
+            if(!isPlaying)
+                bgFmodMusic.start();
+        }
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        //if(currentSceneIndex != 1)
-        //{
-        //    scenePlayerDied = currentSceneIndex;
-        //    audioSource = GetComponent<AudioSource>();
-        //    audioSource.clip = bgMusic;
-        //    //bgAudio.clip = bgMusic;
-        //    //bgAudio.Play();
-        //    //audioSource.Play();
-        //}
     }
 
     private void Update()
     {
-        //if(player != null)
-        //{
-        //    if (player.transform.position.y <= yDeathLimit)
-        //    {
-        //        GameOver();
-        //    }
-        //}
+    }
+
+    public static void FmodChange()
+    {
+        bgFmodMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     IEnumerator WaitForTime()
@@ -95,35 +92,6 @@ public class GameManager : MonoSingleton<GameManager>
     }
 
     public static void GameOver()
-    {
-        //WaitForTime();
-        //scenePlayerDied = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene("GameOverScene");
-    }
-
-    //public static void GameOver(int sceneIndex)
-    //{
-    //    UIManager.scenePlayerDied = sceneIndex;
-    //    SceneManager.LoadScene("GameOverScene");
-    //}
-    
-    //IEnumerator FadeToBlack(float time)
-    //{
-    //    //f(postProcessVolume != null)
-    //    //
-    //    //   ColorParameter colorFillter = postProcessVolume.GetComponent<ColorGrading>().colorFilter;
-    //    //   while (colorFillter.value.grayscale > 0)
-    //    //   {
-    //    //       yield return new WaitForSeconds(time);
-    //    //       Color color = colorFillter.value;
-    //    //       color.in
-    //    //       colorFillter.value = color;
-    //    //
-    //    //   }
-    //    //
-    //}
-
-    public static void GameOver(float delay)
     {
         SceneManager.LoadScene("GameOverScene");
     }

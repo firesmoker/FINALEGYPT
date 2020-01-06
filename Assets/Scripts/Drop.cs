@@ -16,6 +16,13 @@ public class Drop : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //if(collision.CompareTag("Flame"))
+        //{
+        //    FlameV2 flame = collision.GetComponent<FlameV2>();
+        //    if (flame!= null)
+        //    {
+        //    }
+        //}
         myAnimator.SetBool("Hit", true);
         myRigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
 

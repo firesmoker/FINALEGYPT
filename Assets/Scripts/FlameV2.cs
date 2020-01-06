@@ -13,6 +13,7 @@ public class FlameV2 : MonoBehaviour
     [SerializeField] Type type;
     [SerializeField] private GameObject _myLight;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private BoxCollider2D _collider;
     private Light2D _lightComponent;
     [SerializeField] private float _flickerSpeed = 0.1f;
     Flammable myFlammable;
@@ -175,6 +176,7 @@ public class FlameV2 : MonoBehaviour
             state = State.on;
             _myLight.SetActive(true);
             _spriteRenderer.enabled = true;
+            //_collider.enabled = true;
             if (!myFlammable.IsOn)
                 myFlammable.IsOn = true;
             StartCoroutine(IncreasingFlame(_lightComponent));
@@ -191,6 +193,7 @@ public class FlameV2 : MonoBehaviour
             state = State.off;
             _myLight.SetActive(false);
             _spriteRenderer.enabled = false;
+            //_collider.enabled = true;
         }
     }
 
