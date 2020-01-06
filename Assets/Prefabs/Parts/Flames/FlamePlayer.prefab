@@ -58,6 +58,8 @@ MonoBehaviour:
   _maxIntesity: 1.5
   _intesityIncrement: 0.1
   burnsOthers: 0
+  hurtsPlayer: 0
+  quenchedByGroound: 0
 --- !u!212 &5679193495933249713
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -337,6 +339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 3.1720002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221765500806581863, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
+        type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 13.66
       objectReference: {fileID: 0}
     - target: {fileID: 8221765500806581864, guid: d83ee9e1d9e4e4b989dbc83b9fcde023,
         type: 3}

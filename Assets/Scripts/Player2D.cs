@@ -7,6 +7,7 @@ public class Player2D : MonoBehaviour
     [SerializeField] private Vector3 _velocity = new Vector3(0, 0, 0);
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _jumpHeight = 1.5f;
+    [SerializeField] private float _fallDamageVelocity = 4f;
 
     Animator myAnimator;
     public float gravity = 0.1f;
@@ -45,6 +46,11 @@ public class Player2D : MonoBehaviour
     {
         CrouchCalculation();
         MovementCalculation();
+        if (transform.position.y <= GameManager.yDeathLimit)
+        {
+            //Debug.Log("player " + transform.position.y + " ydeathlimit " + GameManager.yDeathLimit);
+            GameManager.GameOver();
+        }
     }
 
     public void MovementCalculation()
@@ -74,6 +80,8 @@ public class Player2D : MonoBehaviour
 
         else if (isGrounded)
         {
+            if (_velocity.y <= -_fallDamageVelocity)
+                GameManager.GameOver();
             _velocity.y = 0;
             canCrouch = true;
             if (Input.GetKey(KeyCode.Space))

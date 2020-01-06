@@ -7,7 +7,14 @@ using UnityEngine.Rendering.PostProcessing;
 public class GameManager : MonoSingleton<GameManager>
 {
     public int currentSceneIndex;
-    public float yDeathLimit;
+    private static float _yDeathLimit = -30f;
+    public static float yDeathLimit
+    {
+        get
+        {
+            return _yDeathLimit;
+        }
+    }
     public GameObject player;
     public AudioClip bgMusic;
     private AudioSource audioSource;
@@ -17,25 +24,42 @@ public class GameManager : MonoSingleton<GameManager>
     // Use this for initialization
     void Start()
     {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if(currentSceneIndex != 1)
+        if(GameObject.Find("Background Music") == null)
         {
-            scenePlayerDied = currentSceneIndex;
-            audioSource = GetComponent<AudioSource>();
-            audioSource.clip = bgMusic;
-            audioSource.Play();
+            GameObject bg = new GameObject("Background Music");
+            DontDestroyOnLoad(bg);
+            AudioSource bgAudio = bg.AddComponent<AudioSource>();
+            currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            if (currentSceneIndex != 1)
+            {
+                bgAudio.clip = bgMusic;
+                bgAudio.loop = true;
+                bgAudio.Play();
+            }
         }
+            
+        
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //if(currentSceneIndex != 1)
+        //{
+        //    scenePlayerDied = currentSceneIndex;
+        //    audioSource = GetComponent<AudioSource>();
+        //    audioSource.clip = bgMusic;
+        //    //bgAudio.clip = bgMusic;
+        //    //bgAudio.Play();
+        //    //audioSource.Play();
+        //}
     }
 
     private void Update()
     {
-        if(player != null)
-        {
-            if (player.transform.position.y <= yDeathLimit)
-            {
-                GameOver();
-            }
-        }
+        //if(player != null)
+        //{
+        //    if (player.transform.position.y <= yDeathLimit)
+        //    {
+        //        GameOver();
+        //    }
+        //}
     }
 
     IEnumerator WaitForTime()
