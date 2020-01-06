@@ -37,7 +37,7 @@ public class Pivot : MonoBehaviour
             myPlayer.FlipSprite(true);
             transform.localScale = new Vector2(-1f, 1f);
         }
-        else 
+        else if (rotationZ != 0)
         {
             myPlayer.FlipSprite(false);
             transform.localScale = new Vector2(1f, 1f);

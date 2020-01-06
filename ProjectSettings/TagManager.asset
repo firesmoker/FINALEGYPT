@@ -9,6 +9,7 @@ TagManager:
   - Quench
   - Flammable
   - Flame
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -21,6 +21,7 @@ public class FlameV2 : MonoBehaviour
     [SerializeField] private float _intesityIncrement = 1.5f;
     public bool burnsOthers = false;
     [SerializeField] bool hurtsPlayer = false;
+    [SerializeField] bool quenchedByGroound = false;
 
     void Start()
     {
@@ -79,6 +80,10 @@ public class FlameV2 : MonoBehaviour
                         if (player != null)
                             GameManager.GameOver();
                     }
+                    break;
+                case ("Ground"):
+                    if (quenchedByGroound)
+                        Destroy(gameObject);
                     break;
             }
 
