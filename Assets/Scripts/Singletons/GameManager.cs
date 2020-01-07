@@ -28,8 +28,10 @@ public class GameManager : MonoSingleton<GameManager>
         {
             bg = new GameObject("Background Music");
             DontDestroyOnLoad(bg);
+            
             bgFmodMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(bgFmodMusic, bg.GetComponent<Transform>(), bg.GetComponent<Rigidbody2D>());
+            
             currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             if (currentSceneIndex != 1)
             {

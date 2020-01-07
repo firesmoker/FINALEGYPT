@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3544481325783292224}
   - component: {fileID: 6280323872104798909}
   - component: {fileID: 2602756099211792756}
+  - component: {fileID: 2890819152084330745}
   m_Layer: 10
   m_Name: FlameGunpowder
   m_TagString: Flame
@@ -53,12 +54,14 @@ MonoBehaviour:
   type: 2
   _myLight: {fileID: 4839419982093475761}
   _spriteRenderer: {fileID: 3544481326932084722}
+  _collider: {fileID: 0}
   _flickerSpeed: 0.1
   _increaseSpeed: 0.1
   _maxIntesity: 1.5
   _intesityIncrement: 1.5
   burnsOthers: 0
   hurtsPlayer: 1
+  quenchedByGroound: 0
 --- !u!212 &3544481326932084722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -182,7 +185,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3544481326932084724}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1870482075565377882, guid: c2f09e2495229674a8173104eea043c7,
     type: 2}
@@ -272,6 +275,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2890819152084330745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544481326932084724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Fire
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &4839419982093475761
 GameObject:
   m_ObjectHideFlags: 0

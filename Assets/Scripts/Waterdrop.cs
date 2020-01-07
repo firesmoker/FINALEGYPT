@@ -8,6 +8,7 @@ public class Waterdrop : MonoBehaviour
     //[SerializeField] float tileOffset = 5f;
     [SerializeField] GameObject dropPrefab;
     public AudioClip dropSound;
+    public string dropSoundFmod;
     private AudioSource audioSource;
 
     public bool KeepDropping = true;
@@ -35,6 +36,7 @@ public class Waterdrop : MonoBehaviour
     }
     public void PlayDropSound()
     {
-        audioSource.PlayOneShot(dropSound);
+        FMODUnity.RuntimeManager.PlayOneShot(dropSoundFmod);
+        //audioSource.PlayOneShot(dropSound);
     }
 }

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5853269014292336266}
   - component: {fileID: 2453358440052180291}
   - component: {fileID: 128119110}
+  - component: {fileID: -8976851710028067200}
   m_Layer: 10
   m_Name: FallingFlame
   m_TagString: Flame
@@ -185,7 +186,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3972819862288241603}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1870482075565377882, guid: c2f09e2495229674a8173104eea043c7,
     type: 2}
@@ -301,6 +302,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.71985674, y: 1.388}
   m_EdgeRadius: 0
+--- !u!114 &-8976851710028067200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972819862288241603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Fire
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &3972819862639396334
 PrefabInstance:
   m_ObjectHideFlags: 0

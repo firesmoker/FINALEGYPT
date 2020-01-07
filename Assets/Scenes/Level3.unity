@@ -76243,6 +76243,18 @@ PrefabInstance:
       propertyPath: _fallDamageVelocity
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2055211401, guid: 3db8f982389604cc4b29605705c67256, type: 3}
+      propertyPath: footstepSound
+      value: event:/Player/Footstep
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055211401, guid: 3db8f982389604cc4b29605705c67256, type: 3}
+      propertyPath: jumpSoundFmod
+      value: event:/Player/Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055211401, guid: 3db8f982389604cc4b29605705c67256, type: 3}
+      propertyPath: landingSoundFmod
+      value: event:/Player/Land
+      objectReference: {fileID: 0}
     - target: {fileID: 2138762416259350542, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -76437,6 +76449,29 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2114321843}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2114321853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114321844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!4 &2139747759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8295808235785414534, guid: 40f4f01c529d6614d96e9c6a86e3a0f2,

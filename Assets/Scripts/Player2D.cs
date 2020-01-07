@@ -22,6 +22,7 @@ public class Player2D : MonoBehaviour
     public float distance;
     public float headBumpHeight;
     public AudioClip footStepSound1, footStepSound2, jumpSound, landingSound;
+    public string footstepSound, jumpSoundFmod, landingSoundFmod;
     private AudioSource audioSource;
     public bool landed = true;
     public bool debugRay = true;
@@ -240,21 +241,25 @@ public class Player2D : MonoBehaviour
     {
         if(IsGrounded())
         {
-            if (i == 1)
-                audioSource.PlayOneShot(footStepSound1);
-            else if (i == 2)
-                audioSource.PlayOneShot(footStepSound2);
+           // if (i == 1)
+           FMODUnity.RuntimeManager.PlayOneShot(footstepSound);
+           // audioSource.PlayOneShot(footStepSound1);
+           // else if (i == 2)
+           //
+           //     audioSource.PlayOneShot(footStepSound2);
         }
         
     }
 
     public void PlayJump()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(jumpSoundFmod);
         audioSource.PlayOneShot(jumpSound);
     }
 
     public void PlayLanding()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(landingSoundFmod);
         audioSource.PlayOneShot(landingSound);
     }
 
