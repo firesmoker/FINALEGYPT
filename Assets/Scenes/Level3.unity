@@ -135635,6 +135635,18 @@ PrefabInstance:
       propertyPath: landingSoundFmod
       value: event:/Player/Land
       objectReference: {fileID: 0}
+    - target: {fileID: 2055211401, guid: 3db8f982389604cc4b29605705c67256, type: 3}
+      propertyPath: lightLayer.m_Bits
+      value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055211401, guid: 3db8f982389604cc4b29605705c67256, type: 3}
+      propertyPath: debugRay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055211401, guid: 3db8f982389604cc4b29605705c67256, type: 3}
+      propertyPath: debugRayWidth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2138762416259350542, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
       propertyPath: m_LocalRotation.z

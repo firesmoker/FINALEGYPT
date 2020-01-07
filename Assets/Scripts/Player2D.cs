@@ -19,6 +19,7 @@ public class Player2D : MonoBehaviour
     private Rigidbody2D myRigidbody2D;
     public bool touchingGround;
     public LayerMask groundLayer;
+    public LayerMask lightLayer;
     public float distance;
     public float headBumpHeight;
     public AudioClip footStepSound1, footStepSound2, jumpSound, landingSound;
@@ -27,10 +28,17 @@ public class Player2D : MonoBehaviour
     public bool landed = true;
     public bool debugRay = true;
     public bool debugRayWidth = true;
+
+    public bool debugLightningRay = true;
+    public bool debugLightningRayWidth = true;
+
     public float playerWidth = 4f;
+    public float playerHeight = 4f;
     public float debugHeadWidth = 2f;
     private float _previousY;
     private float _currentY;
+
+    private bool _checklightning = false;
 
     bool FacingRight = true;
     bool HasTorch = true;
@@ -47,6 +55,8 @@ public class Player2D : MonoBehaviour
     {
         CrouchCalculation();
         MovementCalculation();
+        StartCoroutine(LightningCheckRoutine());
+        LightningCheck();
         if (transform.position.y <= GameManager.yDeathLimit)
         {
             //Debug.Log("player " + transform.position.y + " ydeathlimit " + GameManager.yDeathLimit);
@@ -56,6 +66,91 @@ public class Player2D : MonoBehaviour
        // {
        //     GameManager.GameOver();
        // }
+    }
+
+    public bool IsGrounded()
+    {
+        Vector2 position = new Vector2(transform.position.x, transform.position.y - 2.79f);
+        Vector2 rightPosition = new Vector2(position.x + playerWidth, position.y);
+        Vector2 leftPosition = new Vector2(position.x - playerWidth, position.y);
+        Vector2 direction = Vector2.down;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        RaycastHit2D hitRight = Physics2D.Raycast(rightPosition, direction, distance, groundLayer);
+        RaycastHit2D hitLeft = Physics2D.Raycast(leftPosition, direction, distance, groundLayer);
+        bool groundHit = false;
+        if (debugRay)
+        {
+            Vector2 originalPosition = new Vector2(position.x, position.y + 2.79f);
+            Debug.DrawRay(originalPosition, direction * 2.79f, Color.red);
+        }
+
+        if (debugRayWidth)
+        {
+            Debug.DrawRay(position, Vector2.right * playerWidth, Color.red);
+            Debug.DrawRay(position, Vector2.left * playerWidth, Color.red);
+        }
+
+
+
+        if (hit.collider != null || hitRight.collider != null || hitLeft.collider != null)
+            groundHit = true;
+        if (groundHit)
+        {
+            if (landed == false)
+            {
+                landed = true;
+                transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
+                PlayLanding();
+            }
+            //Debug.Log("grounded");
+            return true;
+        }
+        //Debug.Log("notgrouneded");
+        return false;
+    }
+
+    IEnumerator LightningCheckRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+        _checklightning = true;
+    }
+
+    public void LightningCheck()
+    {
+        if(_checklightning)
+        {
+            Vector2 position = new Vector2(transform.position.x, transform.position.y - 2.79f);
+            Vector2 rightPosition = new Vector2(position.x + playerWidth, position.y);
+            Vector2 leftPosition = new Vector2(position.x - playerWidth, position.y);
+            Vector2 direction = Vector2.down;
+
+            RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, lightLayer);
+            RaycastHit2D hitRight = Physics2D.Raycast(rightPosition, direction, distance, lightLayer);
+            RaycastHit2D hitLeft = Physics2D.Raycast(leftPosition, direction, distance, lightLayer);
+
+            bool lightHit = false;
+
+            if (debugLightningRay)
+            {
+                Vector2 originalPosition = new Vector2(position.x, position.y + 2.79f);
+                Debug.DrawRay(originalPosition, direction * 2.79f, Color.yellow);
+            }
+
+            if (debugLightningRayWidth)
+            {
+                Debug.DrawRay(position, Vector2.right * playerWidth, Color.yellow);
+                Debug.DrawRay(position, Vector2.left * playerWidth, Color.yellow);
+            }
+
+            if (hit.collider != null || hitRight.collider != null || hitLeft.collider != null)
+                lightHit = true;
+            if (!lightHit)
+            {
+                GameManager.GameOver();
+            }
+        }
+        
     }
 
     public void MovementCalculation()
@@ -161,47 +256,7 @@ public class Player2D : MonoBehaviour
     }
 
 
-    public bool IsGrounded()
-    {
-        Vector2 position = new Vector2(transform.position.x, transform.position.y - 2.79f);
-        Vector2 rightPosition = new Vector2(position.x + playerWidth, position.y);
-        Vector2 leftPosition = new Vector2(position.x - playerWidth, position.y);
-        Vector2 direction = Vector2.down;
-
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-        RaycastHit2D hitRight = Physics2D.Raycast(rightPosition, direction, distance, groundLayer);
-        RaycastHit2D hitLeft = Physics2D.Raycast(leftPosition, direction, distance, groundLayer);
-        bool groundHit = false;
-        if (debugRay)
-        {
-            Vector2 originalPosition = new Vector2(position.x, position.y + 2.79f);
-            Debug.DrawRay(originalPosition, direction * 2.79f, Color.red);
-        }
-            
-        if (debugRayWidth)
-        {
-            Debug.DrawRay(position, Vector2.right * playerWidth, Color.red);
-            Debug.DrawRay(position, Vector2.left * playerWidth, Color.red);
-        }
-            
-
-
-        if (hit.collider != null || hitRight.collider != null || hitLeft.collider != null)
-            groundHit = true;
-        if (groundHit)
-        {
-            if (landed == false)
-            {
-                landed = true;
-                transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
-                PlayLanding();
-            }
-            //Debug.Log("grounded");
-            return true;
-        }
-        //Debug.Log("notgrouneded");
-        return false;
-    }
+    
 
 
     public void ResetY()

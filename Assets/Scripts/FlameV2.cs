@@ -38,6 +38,7 @@ public class FlameV2 : MonoBehaviour
         }
         else
             Debug.Log("light component is null");
+        _lightComponent.GetComponent<CircleCollider2D>().radius = _lightComponent.pointLightOuterRadius * 0.9f;
         FlameStart();
     }
 
