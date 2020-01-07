@@ -52,6 +52,10 @@ public class Player2D : MonoBehaviour
             //Debug.Log("player " + transform.position.y + " ydeathlimit " + GameManager.yDeathLimit);
             GameManager.GameOver();
         }
+       // if (Input.GetKeyDown(KeyCode.Z))
+       // {
+       //     GameManager.GameOver();
+       // }
     }
 
     public void MovementCalculation()

@@ -6,8 +6,20 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    private static GameManager _instance;
+    public static new GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+                Debug.LogError("SpawnManager is null");
+            return _instance;
+        }
+
+    }
+
     static FMOD.Studio.EventInstance bgFmodMusic;
-    public int currentSceneIndex;
+    public static int currentSceneIndex;
     private static float _yDeathLimit = -30f;
     public static float yDeathLimit
     {
@@ -17,11 +29,21 @@ public class GameManager : MonoSingleton<GameManager>
         }
     }
     public GameObject player;
+    private static Player2D _playerScript;
     public GameObject bg;
-    public AudioClip bgMusic;
-    private AudioSource audioSource;
+    //public AudioClip bgMusic;
+    //private AudioSource audioSource;
     public static int scenePlayerDied;
+    [SerializeField] private bool gameIsPaused = false;
+    [SerializeField] private static bool gameIsOver = false;
 
+
+
+
+    private void Awake()
+    {
+        _instance = this;
+    }
     void Start()
     {
         if(GameObject.Find("Background Music") == null)
@@ -37,6 +59,8 @@ public class GameManager : MonoSingleton<GameManager>
             {
                 bgFmodMusic.start();
             }
+
+            _playerScript = player.GetComponent<Player2D>();
         }
         else
         {
@@ -54,6 +78,10 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Update()
     {
+       // if(Input.GetKeyDown(KeyCode.P))
+       // { 
+       //
+       // }
     }
 
     public static void FmodChange()
@@ -66,10 +94,11 @@ public class GameManager : MonoSingleton<GameManager>
         yield return new WaitForSeconds(1);
     }
 
-    public void RestartScene()
+    public static void RestartScene()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(currentSceneIndex);
+        gameIsOver = false;
     }
 
     public static void LoadMainMenu()
@@ -95,7 +124,13 @@ public class GameManager : MonoSingleton<GameManager>
 
     public static void GameOver()
     {
-        SceneManager.LoadScene("GameOverScene");
+        if(!gameIsOver)
+        {
+            gameIsOver = true;
+            UIManager.FadeToBlack();
+        }
+            
+        //SceneManager.LoadScene("GameOverScene");
     }
 
     public void GameOverDelay(float delay)
@@ -107,6 +142,23 @@ public class GameManager : MonoSingleton<GameManager>
     {
         Application.Quit();
     }
+
+    public static void DisablePlayer(bool disable)
+    {
+        if(disable)
+        {
+            _playerScript.enabled = false;
+        }
+        else
+        {
+            _playerScript.enabled = true;
+        }
+    }
+
+    //IEnumerator FadeToBlack()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
+    //}
 
     IEnumerator GameOverDelayRoutine(float delay)
     {

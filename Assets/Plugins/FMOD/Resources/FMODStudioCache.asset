@@ -54,6 +54,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-5832439432993304266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637139975414279901
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5813415354039686250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +105,7 @@ MonoBehaviour:
   Path: event:/Player/Jump
   guid: 7e45e6952b6a5f4391e958a734d3e58e
   Banks:
-  - {fileID: -4847154417687176024}
+  - {fileID: 4999364417831490788}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -128,7 +146,7 @@ MonoBehaviour:
   Path: event:/Wind
   guid: 80c261fa1c87774aa2a44796e75e0677
   Banks:
-  - {fileID: -4847154417687176024}
+  - {fileID: 4999364417831490788}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -187,7 +205,7 @@ MonoBehaviour:
   Path: event:/Player/Footstep
   guid: d026fa56a4fc844a9580e6cd482b45b6
   Banks:
-  - {fileID: -4847154417687176024}
+  - {fileID: 4999364417831490788}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -213,6 +231,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-1875988682559717110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637140087194296621
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-1477611401119327398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +264,7 @@ MonoBehaviour:
   Path: event:/Music
   guid: 07308f6ce04109409fd00472b5290422
   Banks:
-  - {fileID: -4847154417687176024}
+  - {fileID: 4999364417831490788}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -236,6 +272,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 46779
+--- !u!114 &-631920714516522373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Water Splat
+  m_EditorClassIdentifier: 
+  Path: event:/Water Splat
+  guid: 309c438660d89b4d9cf6a4d7bb659ac2
+  Banks:
+  - {fileID: 4999364417831490788}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 117
 --- !u!114 &-484259813231810515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 558921965016605047}
-  - {fileID: -4847154417687176024}
+  - {fileID: 4999364417831490788}
   EditorEvents:
   - {fileID: -1477611401119327398}
   - {fileID: 3582590485731348863}
@@ -295,12 +354,13 @@ MonoBehaviour:
   - {fileID: 784061383758130147}
   - {fileID: -3988071897673865885}
   - {fileID: -5033429922753265838}
+  - {fileID: -631920714516522373}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -4847154417687176024}
+  - {fileID: 4999364417831490788}
   StringsBanks:
   - {fileID: 558921965016605047}
-  stringsBankWriteTime: 637139968937193951
+  stringsBankWriteTime: 637140088835103623
   cacheVersion: 3
 --- !u!114 &558921965016605047
 MonoBehaviour:
@@ -316,11 +376,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/egyptFmod/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637139968937193951
+  lastModified: 637140088835103623
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1042
+    Value: 1090
   Exists: 1
 --- !u!114 &784061383758130147
 MonoBehaviour:
@@ -337,7 +397,7 @@ MonoBehaviour:
   Path: event:/Water Drop
   guid: 93087ee62872b54db8103ea47b021177
   Banks:
-  - {fileID: -4847154417687176024}
+  - {fileID: 4999364417831490788}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -360,7 +420,7 @@ MonoBehaviour:
   Path: event:/Fire
   guid: 446ec8c0d99f1f4391396ee2fc7f0602
   Banks:
-  - {fileID: -4847154417687176024}
+  - {fileID: 4999364417831490788}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -383,7 +443,7 @@ MonoBehaviour:
   Path: event:/Player/Land
   guid: 21d9bc156405084d8a01479f3874c59a
   Banks:
-  - {fileID: -4847154417687176024}
+  - {fileID: 4999364417831490788}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -424,6 +484,24 @@ MonoBehaviour:
   Path: FMOD/egyptFmod/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637139964155982018
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4999364417831490788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637140088835083674
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -483,6 +561,24 @@ MonoBehaviour:
   Path: FMOD/egyptFmod/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637139946577270855
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &7845870873746232952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637139972610690939
   LoadResult: 0
   FileSizes: []
   Exists: 0

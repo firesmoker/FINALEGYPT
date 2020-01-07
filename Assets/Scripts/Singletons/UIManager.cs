@@ -6,16 +6,57 @@ using UnityEngine.UI;
 
 public class UIManager : MonoSingleton<UIManager>
 {
+    private static UIManager _instance;
+    public static new UIManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+                Debug.LogError("SpawnManager is null");
+            return _instance;
+        }
+
+    }
+
     //public GameObject panel;
-    public Image panelImage;
+    public GameObject panel;
+    private static GameObject staticPanel;
+    public GameObject fadePanel;
+    private static GameObject staticFadePanel;
+    public bool gameIsPaused = false;
+    public float fadeoutSpeed = 0.05f;
+    private static float _staticFadeoutSpeed;
 
-    // Start is called before the first frame update
-    //public static int scenePlayerDied = 0;
+    
 
-    //private void Start()
-    //{
-    //    scenePlayerDied = 
-    //}
+    private void Awake()
+    {
+        _instance = this;
+    }
+
+    private void Start()
+    {
+        staticPanel = panel;
+        staticFadePanel = fadePanel;
+        _staticFadeoutSpeed = fadeoutSpeed;
+    }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            if (!gameIsPaused)
+            {
+                PauseMenu(true);
+                
+            }
+            else
+            {
+                PauseMenu(false);
+                
+            }
+        }
+    }
+
     public void RestartScene()
     {
         Time.timeScale = 1;
@@ -46,6 +87,45 @@ public class UIManager : MonoSingleton<UIManager>
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void PauseMenu(bool pause)
+    {
+        if(pause)
+        {
+            panel.SetActive(true);
+            gameIsPaused = true;
+            Time.timeScale = 0f;
+            GameManager.DisablePlayer(true);
+        }
+        else
+        {
+            panel.SetActive(false);
+            gameIsPaused = false;
+            Time.timeScale = 1f;
+            GameManager.DisablePlayer(false);
+        }
+    }
+
+    public static void FadeToBlack()
+    {
+        staticFadePanel.SetActive(true);
+        _instance.StartCoroutine(FadeToBlackRoutine());
+    }
+
+    static IEnumerator FadeToBlackRoutine()
+    {
+        Image panelImage = staticFadePanel.GetComponent<Image>();
+        Color color = panelImage.color;
+        color.a = 0f;
+        while (panelImage.color.a < 1f)
+        {
+            yield return new WaitForSeconds(0.05f);
+            color.a += _staticFadeoutSpeed;
+            panelImage.color = color;
+        }
+        GameManager.RestartScene();
+        
     }
 
     //public static void PlayerDeathScene(int sceneIndex)

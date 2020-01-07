@@ -10,12 +10,14 @@ public class Waterdrop : MonoBehaviour
     public AudioClip dropSound;
     public string dropSoundFmod;
     private AudioSource audioSource;
-
+    private FMODUnity.StudioEventEmitter _eventEmitter;
     public bool KeepDropping = true;
+    [SerializeField] float dropStartDelay = 0.5f;
 
     // Update is called once per frame
     void Start()
     {
+        _eventEmitter = GetComponent<FMODUnity.StudioEventEmitter>();
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(dropWater());
     }
@@ -23,6 +25,7 @@ public class Waterdrop : MonoBehaviour
     IEnumerator dropWater()
     {
         yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(dropStartDelay);
         while (KeepDropping == true)
         {
             PlayDropSound();
@@ -37,7 +40,7 @@ public class Waterdrop : MonoBehaviour
     }
     public void PlayDropSound()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(dropSoundFmod);
+        _eventEmitter.Play();
         //audioSource.PlayOneShot(dropSound);
     }
 }

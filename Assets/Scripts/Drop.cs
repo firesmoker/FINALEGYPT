@@ -6,9 +6,11 @@ public class Drop : MonoBehaviour
 {
     Animator myAnimator;
     Rigidbody2D myRigidbody2D;
+    private FMODUnity.StudioEventEmitter _eventEmitter;
 
     private void Start()
     {
+        _eventEmitter = GetComponent<FMODUnity.StudioEventEmitter>();
         myAnimator = GetComponent<Animator>();
         myRigidbody2D = GetComponent<Rigidbody2D>();
     }
@@ -16,14 +18,9 @@ public class Drop : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if(collision.CompareTag("Flame"))
-        //{
-        //    FlameV2 flame = collision.GetComponent<FlameV2>();
-        //    if (flame!= null)
-        //    {
-        //    }
-        //}
         myAnimator.SetBool("Hit", true);
+        _eventEmitter.Play();
+        //FMODUnity.RuntimeManager.PlayOneShot();
         myRigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
 
     }
