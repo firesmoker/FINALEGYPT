@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{e99a08ad-87a8-411e-8cc7-723516539c1c}">
+		<property name="assetPath">
+			<value>3-hours-best-water-drops-sounds-effect-background-relax-sleep-study-meditation(1).mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>15.046530612244897</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5151f3f0-6c8c-4037-8ebb-88764c0264f3}</destination>
+		</relationship>
+	</object>
+</objects>

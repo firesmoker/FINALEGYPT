@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{cdcde6fe-084c-48cc-a4fe-6b653a9a8dcc}">
+		<property name="assetPath">
+			<value>land.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.22351473922902496</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5151f3f0-6c8c-4037-8ebb-88764c0264f3}</destination>
+		</relationship>
+	</object>
+</objects>
