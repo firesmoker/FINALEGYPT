@@ -19,6 +19,11 @@ public class Pivot : MonoBehaviour
 
         difference.Normalize();
 
+        if (difference.x < 0.1 && difference.x > -0.1) // Check if mouse is very close to player
+        {
+            return; // If it is, skip the pivoting and wait for the mouse to be a little further away from the player
+        }
+
         rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
