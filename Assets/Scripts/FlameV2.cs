@@ -61,7 +61,7 @@ public class FlameV2 : MonoBehaviour
                 case ("Flammable"):
                     if (state == State.on && burnsOthers)
                     {
-                        Debug.Log("touching flamable");
+                        //Debug.Log("touching flamable");
                         Flammable flammable = collision.gameObject.GetComponent<Flammable>();
                         if (!flammable.IsOn)
                         {

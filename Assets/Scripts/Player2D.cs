@@ -324,10 +324,19 @@ public class Player2D : MonoBehaviour
 
     public void DisableInput(bool disable)
     {
+        Debug.Log("entered disableinput");
         if (disable)
+        {
+            Debug.Log(" disableinput true");
             _inputDisabled = true;
+        }
+            
         else
+        {
             _inputDisabled = false;
+            Debug.Log(" disableinput true");
+        }
+            
     }
 
     public void PlayJump()

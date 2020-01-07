@@ -218,7 +218,7 @@ PrefabInstance:
     - target: {fileID: 2727955199614914396, guid: 34dcca13f3d4a2d42a1d857882b7cfde,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.28
+      value: 34.48
       objectReference: {fileID: 0}
     - target: {fileID: 2727955199614914396, guid: 34dcca13f3d4a2d42a1d857882b7cfde,
         type: 3}
@@ -290,7 +290,8 @@ PrefabInstance:
       propertyPath: OverrideMaxDistance
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 895851352, guid: 34dcca13f3d4a2d42a1d857882b7cfde, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34dcca13f3d4a2d42a1d857882b7cfde, type: 3}
 --- !u!1 &424508298
 GameObject:
