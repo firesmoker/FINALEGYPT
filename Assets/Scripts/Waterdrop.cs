@@ -22,6 +22,7 @@ public class Waterdrop : MonoBehaviour
 
     IEnumerator dropWater()
     {
+        yield return new WaitForSeconds(1f);
         while (KeepDropping == true)
         {
             PlayDropSound();

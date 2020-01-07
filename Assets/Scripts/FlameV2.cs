@@ -23,9 +23,11 @@ public class FlameV2 : MonoBehaviour
     public bool burnsOthers = false;
     [SerializeField] bool hurtsPlayer = false;
     [SerializeField] bool quenchedByGroound = false;
+    private FMODUnity.StudioEventEmitter _eventEmitter;
 
     void Start()
     {
+        _eventEmitter = GetComponent<FMODUnity.StudioEventEmitter>();
         myFlammable = GetComponentInParent<Flammable>();
         if (myFlammable == null)
             Debug.LogError("flammable parent is null");
@@ -91,34 +93,6 @@ public class FlameV2 : MonoBehaviour
         }
     }
 
-    //Debug.Log("collision between flame and flammable");
-    //string collisionTag = collision.tag;
-    //if (state == State.on)
-    //{
-    //    Debug.Log("quenched");
-    //    if (type == Type.playerTorch)
-    //        GameManager.GameOver();
-    //    FlameStop();
-    //}
-
-    // if (collision.gameObject.CompareTag("Flammable") && state == State.on && burnsOthers)
-    // {
-    //     Debug.Log("touching flamable");
-    //     Flammable flammable = collision.gameObject.GetComponent<Flammable>();
-    //     if (!flammable.IsOn)
-    //     {
-    //         Debug.Log("started flameon");
-    //         flammable.FlameOn();
-    //         if (flammable.oneTimeUse && !flammable.isFading)
-    //         {
-    //             Debug.Log("FADETODEATH");
-    //             //StartCoroutine(flammable.FadeToDeath());
-    //             flammable.StartFadeToDeath();
-    //         }
-    //             
-    //     }
-    // }
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (burnsOthers && collision.CompareTag("Flammable"))
@@ -173,6 +147,7 @@ public class FlameV2 : MonoBehaviour
     {
         if (state != State.on)
         {
+            _eventEmitter.Play();
             state = State.on;
             _myLight.SetActive(true);
             _spriteRenderer.enabled = true;
@@ -187,6 +162,7 @@ public class FlameV2 : MonoBehaviour
     {
         if (state != State.off)
         {
+            _eventEmitter.Stop();
             burnsOthers = false;
             if (myFlammable.IsOn)
                 myFlammable.IsOn = false;

@@ -54,7 +54,7 @@ MonoBehaviour:
   type: 1
   _myLight: {fileID: 8350658067629764230}
   _spriteRenderer: {fileID: 142685192715466437}
-  _collider: {fileID: 0}
+  _collider: {fileID: 142685192715466436}
   _flickerSpeed: 0.1
   _increaseSpeed: 0.02
   _maxIntesity: 1.5

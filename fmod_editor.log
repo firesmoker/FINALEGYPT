@@ -15,8 +15,101 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 123, compatVersion = 119 (oldest = 44, newest = 123)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 832608
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 10848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000095F31FF40C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC98267F20
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC98267EF0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC98267FF0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC982680B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000219AFC60498
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='FootstepsCement_BW.7537_normalized-002', format=2, channels=2, frequency=48000, lengthbytes=5280, lengthpcm=24000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.699281.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 832608
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 10848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000095F31FF40C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC98267F20
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC98267EF0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC98267FF0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC982680B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000219AFC60498
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='FootstepsCement_BW.7537_normalized-001', format=2, channels=2, frequency=48000, lengthbytes=3520, lengthpcm=15813, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.720269.
 [LOG] Manager::readBank                        : fileversion = 123, compatVersion = 119 (oldest = 44, newest = 123)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 832608
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 10848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000095F31FF40C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC98267F20
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC98267EF0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC98267FF0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC982680B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000219AFC671E8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='jump', format=2, channels=2, frequency=48000, lengthbytes=3584, lengthpcm=12216, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.803280.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 832608
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 10848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000095F31FF40C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC98267F20
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC98267EF0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC98267FF0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC982680B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000219B5A762A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='land', format=2, channels=2, frequency=48000, lengthbytes=3104, lengthpcm=10728, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.760367.
 [LOG] Manager::readBank                        : fileversion = 123, compatVersion = 119 (oldest = 44, newest = 123)
+[LOG] SoundI::release                          : BGMusic2LOOP (000002198A945FB8)
+[LOG] SoundI::release                          :     BGMusic2LOOP (000002198AD0B788)
+[LOG] SoundI::release                          :     BGMusic2LOOP (000002198A944B78)
+[LOG] SoundI::release                          :  (00000219F4C97DC8)
+[LOG] SoundI::release                          :     jump (00000219F368C138)
+[LOG] SoundI::release                          :  (00000219DBEAA3A8)
+[LOG] SoundI::release                          :     land (00000219DC613F18)
+[LOG] SoundI::release                          :  (0000021983B164C8)
+[LOG] SoundI::release                          :     dropLong (000002198AD0BC68)
+[LOG] SoundI::release                          :  (0000021983B17778)
+[LOG] SoundI::release                          :     FireLightCrackles_HV.262-glued_normalized (000002198AD09D88)
+[LOG] SoundI::release                          :  (0000021983B17D38)
+[LOG] SoundI::release                          :     FootstepsCement_BW.7537_normalized-001 (00000219F368BF98)
+[LOG] SoundI::release                          :  (0000021983B167A8)
+[LOG] SoundI::release                          :     FootstepsCement_BW.7537_normalized-002 (00000219F368B298)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] ProfileClient::markForDead               : Closing client connection
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] FMOD_OS_Net_Read                         : Interrupted.[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
+[LOG] ProfileClient::recvThreadLoopFunction    : Socket disconnected
+[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 123, compatVersion = 119 (oldest = 44, newest = 123)
 [LOG] Manager::readBank                        : fileversion = 123, compatVersion = 119 (oldest = 44, newest = 123)
 [LOG] Manager::readBank                        : fileversion = 123, compatVersion = 119 (oldest = 44, newest = 123)
@@ -27,4 +120,6 @@
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

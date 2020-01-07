@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropTimer: 3
-  tileOffset: 5
   dropPrefab: {fileID: 5795634333824559113, guid: 9f95f4bf81ee9b345b6a6ea3c6b4afac,
     type: 3}
   dropSound: {fileID: 8300000, guid: 3677f9acbb39c2c4281fb1b8fa33b834, type: 3}
+  dropSoundFmod: event:/Water Drop
   KeepDropping: 1
 --- !u!82 &895851352
 AudioSource:
