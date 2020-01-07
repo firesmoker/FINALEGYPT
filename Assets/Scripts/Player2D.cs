@@ -37,6 +37,7 @@ public class Player2D : MonoBehaviour
     public float debugHeadWidth = 2f;
     private float _previousY;
     private float _currentY;
+    [SerializeField] private bool _inputDisabled = false;
 
     private bool _checklightning = false;
     [SerializeField] private float _darknessTimeCounter = 0f;
@@ -63,10 +64,12 @@ public class Player2D : MonoBehaviour
             //Debug.Log("player " + transform.position.y + " ydeathlimit " + GameManager.yDeathLimit);
             GameManager.GameOver();
         }
-       // if (Input.GetKeyDown(KeyCode.Z))
-       // {
-       //     GameManager.GameOver();
-       // }
+
+        
+        // if (Input.GetKeyDown(KeyCode.Z))
+        // {
+        //     GameManager.GameOver();
+        // }
     }
 
     public bool IsGrounded()
@@ -197,6 +200,10 @@ public class Player2D : MonoBehaviour
             }
         }
         HeadBump();
+        if (_inputDisabled)
+        {
+            _velocity.x = 0f;
+        }
         myRigidbody2D.velocity = (_velocity * _speed);
     }
 
@@ -313,6 +320,14 @@ public class Player2D : MonoBehaviour
            //     audioSource.PlayOneShot(footStepSound2);
         }
         
+    }
+
+    public void DisableInput(bool disable)
+    {
+        if (disable)
+            _inputDisabled = true;
+        else
+            _inputDisabled = false;
     }
 
     public void PlayJump()

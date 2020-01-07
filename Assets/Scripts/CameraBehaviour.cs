@@ -72,13 +72,13 @@ public class CameraBehaviour : MonoBehaviour
     {
 
         //Camera Switch
-        if (Input.GetKeyDown(KeyCode.L) && !_cameraUpKey)
-        {
-            if (_type.ToString() == "Main" || _type.ToString() == "Secondary")
-            {
-                EnableCamera();
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.L) && !_cameraUpKey)
+        //{
+        //    if (_type.ToString() == "Main" || _type.ToString() == "Secondary")
+        //    {
+        //        EnableCamera();
+        //    }
+        //}
 
         if (_smartCameraOn && _player != null)
         {

@@ -35,7 +35,8 @@ public class GameManager : MonoSingleton<GameManager>
     //private AudioSource audioSource;
     public static int scenePlayerDied;
     [SerializeField] private bool gameIsPaused = false;
-    [SerializeField] private static bool gameIsOver = false;
+    [SerializeField] private static bool _gameIsOver = false;
+
 
 
 
@@ -78,10 +79,10 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Update()
     {
-       // if(Input.GetKeyDown(KeyCode.P))
-       // { 
-       //
-       // }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    
+        //}
     }
 
     public static void FmodChange()
@@ -98,7 +99,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(currentSceneIndex);
-        gameIsOver = false;
+        _gameIsOver = false;
     }
 
     public static void LoadMainMenu()
@@ -124,9 +125,10 @@ public class GameManager : MonoSingleton<GameManager>
 
     public static void GameOver()
     {
-        if(!gameIsOver)
+        if(!_gameIsOver)
         {
-            gameIsOver = true;
+            _gameIsOver = true;
+            _playerScript.DisableInput(true);
             UIManager.FadeToBlack();
         }
             
