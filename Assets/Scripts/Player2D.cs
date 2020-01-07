@@ -39,7 +39,8 @@ public class Player2D : MonoBehaviour
     private float _currentY;
 
     private bool _checklightning = false;
-
+    [SerializeField] private float _darknessTimeCounter = 0f;
+    [SerializeField] private float _darknessTimeMax = 20f;
     bool FacingRight = true;
     bool HasTorch = true;
 
@@ -147,8 +148,12 @@ public class Player2D : MonoBehaviour
                 lightHit = true;
             if (!lightHit)
             {
+                _darknessTimeCounter++;
+                if(_darknessTimeCounter >= _darknessTimeMax)
                 GameManager.GameOver();
             }
+            else
+                _darknessTimeCounter = 0f;
         }
         
     }
