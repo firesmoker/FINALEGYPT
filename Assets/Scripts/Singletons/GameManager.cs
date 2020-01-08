@@ -20,14 +20,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     static FMOD.Studio.EventInstance bgFmodMusic;
     public static int currentSceneIndex;
-    private static float _yDeathLimit = -30f;
-    public static float yDeathLimit
-    {
-        get
-        {
-            return _yDeathLimit;
-        }
-    }
+
+    public static float yDeathLimit { get; } = -17f;
     public GameObject player;
     private static Player2D _playerScript;
     public GameObject bg;
