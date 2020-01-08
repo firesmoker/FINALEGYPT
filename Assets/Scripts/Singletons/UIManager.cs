@@ -57,7 +57,7 @@ public class UIManager : MonoSingleton<UIManager>
         }
     }
 
-    public void RestartScene()
+    public static void RestartScene()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
@@ -124,8 +124,7 @@ public class UIManager : MonoSingleton<UIManager>
             color.a += _staticFadeoutSpeed;
             panelImage.color = color;
         }
-        GameManager.RestartScene();
-        
+        GameManager.FadeEnded();
     }
 
     //public static void PlayerDeathScene(int sceneIndex)

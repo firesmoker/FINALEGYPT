@@ -31,11 +31,10 @@ public class GameManager : MonoSingleton<GameManager>
     public static int scenePlayerDied;
     [SerializeField] private bool gameIsPaused = false;
     [SerializeField] private static bool _gameIsOver = false;
+    private static bool _levelEnded = false;
     [SerializeField] private GameObject _levelStartPoint, _levelEndPoint;
     public float distanceToEnd;
     Vector2 levelStartVectorPosition, levelEndVectorPosition;
-
-
 
 
 
@@ -111,11 +110,19 @@ public class GameManager : MonoSingleton<GameManager>
         yield return new WaitForSeconds(1);
     }
 
-    public static void RestartScene()
+    public static void FadeEnded()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(currentSceneIndex);
-        _gameIsOver = false;
+        _levelEnded = false;
+        if (_gameIsOver)
+        {
+            _gameIsOver = false;
+            SceneManager.LoadScene(currentSceneIndex);
+        }
+        else
+        {
+            SceneManager.LoadScene(currentSceneIndex + 1);
+        }
     }
 
     public static void LoadMainMenu()
@@ -139,16 +146,25 @@ public class GameManager : MonoSingleton<GameManager>
         SceneManager.LoadScene(sceneIndex);
     }
 
+    public static void WinLevel()
+    {
+        EndLevel();
+    }
+
     public static void GameOver()
     {
-        if(!_gameIsOver)
+        if(!_levelEnded)
         {
             _gameIsOver = true;
             _playerScript.DisableInput(true);
-            UIManager.FadeToBlack();
+            EndLevel();
         }
-            
-        //SceneManager.LoadScene("GameOverScene");
+    }
+
+    private static void EndLevel()
+    {
+        _levelEnded = true;
+        UIManager.FadeToBlack();
     }
 
     public void GameOverDelay(float delay)
