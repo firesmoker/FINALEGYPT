@@ -25033,8 +25033,6 @@ GameObject:
   - component: {fileID: 1143341810}
   - component: {fileID: 1143341809}
   - component: {fileID: 1143341808}
-  - component: {fileID: 1143341812}
-  - component: {fileID: 1143341811}
   m_Layer: 8
   m_Name: Ground
   m_TagString: Ground
@@ -95473,49 +95471,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!66 &1143341811
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143341806}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths: []
-  m_CompositePaths:
-    m_Paths: []
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
---- !u!50 &1143341812
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143341806}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &1175542344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97336,12 +97291,12 @@ PrefabInstance:
     - target: {fileID: 2138762418297025277, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6906148
+      value: 0.69061476
       objectReference: {fileID: 0}
     - target: {fileID: 2138762418297025277, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.72322285
+      value: 0.7232229
       objectReference: {fileID: 0}
     - target: {fileID: 2138762418297025277, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
@@ -97361,12 +97316,12 @@ PrefabInstance:
     - target: {fileID: 2650345558083621596, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.13914333
+      value: 0.13914378
       objectReference: {fileID: 0}
     - target: {fileID: 2650345558083621596, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9902722
+      value: 0.99027216
       objectReference: {fileID: 0}
     - target: {fileID: 2851898787206752227, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
@@ -97381,12 +97336,12 @@ PrefabInstance:
     - target: {fileID: 3268793306117110209, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.99969625
+      value: 0.9996963
       objectReference: {fileID: 0}
     - target: {fileID: 3268793306117110209, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.024644086
+      value: 0.024644414
       objectReference: {fileID: 0}
     - target: {fileID: 3402756136668892352, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
@@ -97406,7 +97361,7 @@ PrefabInstance:
     - target: {fileID: 3529293475566398007, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3529293475566398007, guid: 3db8f982389604cc4b29605705c67256,
         type: 3}
