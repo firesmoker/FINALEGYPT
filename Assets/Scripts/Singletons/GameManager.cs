@@ -8,7 +8,7 @@ public class GameManager : MonoSingleton<GameManager>
 {
     private static GameManager _instance;
     public static new GameManager Instance
-    {
+    {		
         get
         {
             if (_instance == null)
@@ -20,15 +20,9 @@ public class GameManager : MonoSingleton<GameManager>
 
     static FMOD.Studio.EventInstance bgFmodMusic;
     public static int currentSceneIndex;
-    public int level = 1;
-    private static float _yDeathLimit = -30f;
-    public static float yDeathLimit
-    {
-        get
-        {
-            return _yDeathLimit;
-        }
-    }
+
+	public int level = 1;
+    public static float yDeathLimit { get; } = -17f;
     public GameObject player;
     private static Player2D _playerScript;
     public GameObject bg;
