@@ -22,9 +22,9 @@ public class Player2D : MonoBehaviour
     public LayerMask lightLayer;
     public float distance;
     public float headBumpHeight;
-    public AudioClip footStepSound1, footStepSound2, jumpSound, landingSound;
+    //public AudioClip footStepSound1, footStepSound2, jumpSound, landingSound;
     public string footstepSound, jumpSoundFmod, landingSoundFmod;
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
     public bool landed = true;
     public bool debugRay = true;
     public bool debugRayWidth = true;
@@ -49,7 +49,7 @@ public class Player2D : MonoBehaviour
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         _previousY = transform.position.y;
         _currentY = transform.position.y;
     }
@@ -342,13 +342,13 @@ public class Player2D : MonoBehaviour
     public void PlayJump()
     {
         FMODUnity.RuntimeManager.PlayOneShot(jumpSoundFmod);
-        audioSource.PlayOneShot(jumpSound);
+        //audioSource.PlayOneShot(jumpSound);
     }
 
     public void PlayLanding()
     {
         FMODUnity.RuntimeManager.PlayOneShot(landingSoundFmod);
-        audioSource.PlayOneShot(landingSound);
+        //audioSource.PlayOneShot(landingSound);
     }
 
 }
