@@ -20,6 +20,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     static FMOD.Studio.EventInstance bgFmodMusic;
     public static int currentSceneIndex;
+    public int level = 1;
     private static float _yDeathLimit = -30f;
     public static float yDeathLimit
     {
@@ -36,6 +37,9 @@ public class GameManager : MonoSingleton<GameManager>
     public static int scenePlayerDied;
     [SerializeField] private bool gameIsPaused = false;
     [SerializeField] private static bool _gameIsOver = false;
+    [SerializeField] private GameObject _levelStartPoint, _levelEndPoint;
+    public float distanceToEnd;
+    Vector2 levelStartVectorPosition, levelEndVectorPosition;
 
 
 
@@ -47,7 +51,11 @@ public class GameManager : MonoSingleton<GameManager>
     }
     void Start()
     {
-        if(GameObject.Find("Background Music") == null)
+        levelStartVectorPosition = new Vector2(_levelStartPoint.transform.position.x, _levelStartPoint.transform.position.y);
+        levelEndVectorPosition = new Vector2(_levelEndPoint.transform.position.x, _levelEndPoint.transform.position.y);
+        //Vector2 distanceVector = new Vector2(levelStartVectorPosition, levelEndVectorPosition);
+        distanceToEnd = Vector2.Distance(levelStartVectorPosition, levelEndVectorPosition);
+        if (GameObject.Find("Background Music") == null)
         {
             bg = new GameObject("Background Music");
             DontDestroyOnLoad(bg);
@@ -74,15 +82,29 @@ public class GameManager : MonoSingleton<GameManager>
             if(!isPlaying)
                 bgFmodMusic.start();
         }
+        bgFmodMusic.setParameterByName("Level", level);
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Update()
     {
+        PlayerDistanceToEnd();
         //if (Input.GetKeyDown(KeyCode.L))
         //{
         //    
         //}
+    }
+
+    public void PlayerDistanceToEnd()
+    {
+        Vector2 playerPositionVector = new Vector2(player.transform.position.x, player.transform.position.y);
+        float playerDistanceToEnd = Vector2.Distance(playerPositionVector, levelEndVectorPosition);
+        float percentageToEnd = (playerDistanceToEnd / distanceToEnd)*100f;
+        Debug.Log("percentage to end is " + percentageToEnd);
+        if(percentageToEnd <= 0)
+            bgFmodMusic.setParameterByName("DistanceToEnd", 0);
+        else
+            bgFmodMusic.setParameterByName("DistanceToEnd", percentageToEnd);
     }
 
     public static void FmodChange()
