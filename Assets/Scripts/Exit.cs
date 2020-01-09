@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Exit : MonoBehaviour
 {
+    public int nextLevelNumber = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class Exit : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.WinLevel();
+            GameManager.WinLevel(nextLevelNumber);
         }
     }
 }

@@ -19,10 +19,10 @@ public class GameManager : MonoSingleton<GameManager>
     }
 
     static FMOD.Studio.EventInstance bgFmodMusic;
-    public static int currentSceneIndex;
 
 	public int level = 1;
-    public static float yDeathLimit { get; } = -17f;
+    public static float yDeathLimit { get; set; } = -17f;
+    public float yDeathLimitPublic = -17f;
     public GameObject player;
     private static Player2D _playerScript;
     public GameObject bg;
@@ -32,9 +32,11 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private bool gameIsPaused = false;
     [SerializeField] private static bool _gameIsOver = false;
     private static bool _levelEnded = false;
+    //public  bool levelendedCheck;
     [SerializeField] private GameObject _levelStartPoint, _levelEndPoint;
     public float distanceToEnd;
     Vector2 levelStartVectorPosition, levelEndVectorPosition;
+    public bool changeTo4 = false;
 
 
 
@@ -44,6 +46,12 @@ public class GameManager : MonoSingleton<GameManager>
     }
     void Start()
     {
+        yDeathLimit = yDeathLimitPublic;
+        //levelendedCheck = _levelEnded;
+        if (_levelStartPoint == null)
+            _levelStartPoint = new GameObject();
+        if (_levelEndPoint == null)
+            _levelEndPoint = new GameObject();
         levelStartVectorPosition = new Vector2(_levelStartPoint.transform.position.x, _levelStartPoint.transform.position.y);
         levelEndVectorPosition = new Vector2(_levelEndPoint.transform.position.x, _levelEndPoint.transform.position.y);
         //Vector2 distanceVector = new Vector2(levelStartVectorPosition, levelEndVectorPosition);
@@ -52,16 +60,9 @@ public class GameManager : MonoSingleton<GameManager>
         {
             bg = new GameObject("Background Music");
             DontDestroyOnLoad(bg);
-            
             bgFmodMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(bgFmodMusic, bg.GetComponent<Transform>(), bg.GetComponent<Rigidbody2D>());
-            
-            currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            if (currentSceneIndex != 1)
-            {
-                bgFmodMusic.start();
-            }
-
+            bgFmodMusic.start();
             _playerScript = player.GetComponent<Player2D>();
         }
         else
@@ -76,7 +77,6 @@ public class GameManager : MonoSingleton<GameManager>
                 bgFmodMusic.start();
         }
         bgFmodMusic.setParameterByName("Level", level);
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Update()
@@ -94,10 +94,23 @@ public class GameManager : MonoSingleton<GameManager>
         float playerDistanceToEnd = Vector2.Distance(playerPositionVector, levelEndVectorPosition);
         float percentageToEnd = (playerDistanceToEnd / distanceToEnd)*100f;
         Debug.Log("percentage to end is " + percentageToEnd);
-        if(percentageToEnd <= 0)
-            bgFmodMusic.setParameterByName("DistanceToEnd", 0);
+        float currentFmodLevel = 0;
+        bgFmodMusic.getParameterByName("Level", out currentFmodLevel);
+        if (currentFmodLevel != 3)
+        {
+            if (percentageToEnd <= 0)
+                bgFmodMusic.setParameterByName("DistanceToEnd", 0);
+            else
+                bgFmodMusic.setParameterByName("DistanceToEnd", percentageToEnd);
+        }
         else
-            bgFmodMusic.setParameterByName("DistanceToEnd", percentageToEnd);
+        {
+            if(!changeTo4)
+                bgFmodMusic.setParameterByName("DistanceToEnd", 0);
+            else
+                bgFmodMusic.setParameterByName("DistanceToEnd", 100);
+        }
+        
     }
 
     public static void FmodChange()
@@ -117,11 +130,11 @@ public class GameManager : MonoSingleton<GameManager>
         if (_gameIsOver)
         {
             _gameIsOver = false;
-            SceneManager.LoadScene(currentSceneIndex);
+            SceneManager.LoadScene(GetSceneIndex());
         }
         else
         {
-            SceneManager.LoadScene(currentSceneIndex + 1);
+            SceneManager.LoadScene(GetSceneIndex() + 1);
         }
     }
 
@@ -129,6 +142,11 @@ public class GameManager : MonoSingleton<GameManager>
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("StartMenuScene");
+    }
+
+    private static int GetSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
     }
 
     public static void LoadOptionsScreen()
@@ -148,7 +166,21 @@ public class GameManager : MonoSingleton<GameManager>
 
     public static void WinLevel()
     {
-        EndLevel();
+        if(!_levelEnded)
+            EndLevel();
+    }
+
+    public void ToLevel4()
+    {
+        changeTo4 = true;
+        //bgFmodMusic.setParameterByName("Level", 4);
+    }
+
+    public static void WinLevel(int nextLevelNumber)
+    {
+        bgFmodMusic.setParameterByName("Level", nextLevelNumber);
+        if (!_levelEnded)
+            EndLevel();
     }
 
     public static void GameOver()

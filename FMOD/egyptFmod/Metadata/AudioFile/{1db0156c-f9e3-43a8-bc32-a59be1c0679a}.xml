@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{1db0156c-f9e3-43a8-bc32-a59be1c0679a}">
+		<property name="assetPath">
+			<value>Music/egyptLevel3firstStrings_mastered.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>40.677959183673472</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5151f3f0-6c8c-4037-8ebb-88764c0264f3}</destination>
+		</relationship>
+	</object>
+</objects>

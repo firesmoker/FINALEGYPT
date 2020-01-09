@@ -1,5 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9191387683410296864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141604219640437
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-8323221896105821509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141636228298500
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8024009339399076330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,6 +72,40 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-7276677456106129196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 6
+  Default: 1
+  Exists: 1
+--- !u!114 &-7055308466888785141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Loop
+  m_EditorClassIdentifier: 
+  Name: Loop
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &-6816385000117414381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,6 +123,41 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &-6206986572384125330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141241699498521
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-6066435968671463563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-5915313045171498371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +227,7 @@ MonoBehaviour:
   Path: event:/Player/Jump
   guid: 7e45e6952b6a5f4391e958a734d3e58e
   Banks:
-  - {fileID: -2664673139279243505}
+  - {fileID: -8323221896105821509}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -163,7 +268,7 @@ MonoBehaviour:
   Path: event:/Wind
   guid: 80c261fa1c87774aa2a44796e75e0677
   Banks:
-  - {fileID: -2664673139279243505}
+  - {fileID: -8323221896105821509}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -222,7 +327,7 @@ MonoBehaviour:
   Path: event:/Player/Footstep
   guid: d026fa56a4fc844a9580e6cd482b45b6
   Banks:
-  - {fileID: -2664673139279243505}
+  - {fileID: -8323221896105821509}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -230,6 +335,110 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 500
+--- !u!114 &-3600725207131294180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141251377605282
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-3556929505251559086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &-3513548214322631197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &-3423857643721589775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141297164607518
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3335243988052689559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &-3018128383645221511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-2818333465075796950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +511,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-2273708893414031101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 6
+  Default: 1
+  Exists: 1
 --- !u!114 &-1875988682559717110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +546,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-1535713163858462932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-1477611401119327398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,16 +578,33 @@ MonoBehaviour:
   Path: event:/Music
   guid: 07308f6ce04109409fd00472b5290422
   Banks:
-  - {fileID: -2664673139279243505}
+  - {fileID: -8323221896105821509}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4390703771184300883}
-  - {fileID: 8278284576960659355}
+  - {fileID: -3513548214322631197}
+  - {fileID: 3244200417460353815}
   MinDistance: 0
   MaxDistance: 0
-  Length: 81355
+  Length: 212457
+--- !u!114 &-900969480725554994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 4
+  Default: 1
+  Exists: 1
 --- !u!114 &-631920714516522373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,7 +620,7 @@ MonoBehaviour:
   Path: event:/Water Splat
   guid: 309c438660d89b4d9cf6a4d7bb659ac2
   Banks:
-  - {fileID: -2664673139279243505}
+  - {fileID: -8323221896105821509}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -418,7 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 558921965016605047}
-  - {fileID: -2664673139279243505}
+  - {fileID: -8323221896105821509}
   EditorEvents:
   - {fileID: -1477611401119327398}
   - {fileID: 3582590485731348863}
@@ -430,10 +690,10 @@ MonoBehaviour:
   - {fileID: -631920714516522373}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -2664673139279243505}
+  - {fileID: -8323221896105821509}
   StringsBanks:
   - {fileID: 558921965016605047}
-  stringsBankWriteTime: 637141222526910133
+  stringsBankWriteTime: 637141636228308469
   cacheVersion: 3
 --- !u!114 &558921965016605047
 MonoBehaviour:
@@ -449,11 +709,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/egyptFmod/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637141222526910133
+  lastModified: 637141636228308469
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 1186
+  Exists: 1
+--- !u!114 &600560984292658577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141568091613654
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &784061383758130147
 MonoBehaviour:
@@ -470,7 +748,7 @@ MonoBehaviour:
   Path: event:/Water Drop
   guid: 93087ee62872b54db8103ea47b021177
   Banks:
-  - {fileID: -2664673139279243505}
+  - {fileID: -8323221896105821509}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -478,6 +756,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2155
+--- !u!114 &902554129361137115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &1257766782240094215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 6
+  Default: 1
+  Exists: 0
+--- !u!114 &1311419219730531083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141567378729815
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &1448218182108201841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
 --- !u!114 &1499999095479549618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +860,40 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &2070278989356004761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &2625753452816124154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 6
+  Default: 1
+  Exists: 1
 --- !u!114 &2731791210318380340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +909,7 @@ MonoBehaviour:
   Path: event:/Fire
   guid: 446ec8c0d99f1f4391396ee2fc7f0602
   Banks:
-  - {fileID: -2664673139279243505}
+  - {fileID: -8323221896105821509}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -536,6 +917,40 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 5540
+--- !u!114 &3167730796175294611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 4
+  Default: 1
+  Exists: 0
+--- !u!114 &3244200417460353815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 6
+  Default: 1
+  Exists: 1
 --- !u!114 &3582590485731348863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,7 +966,7 @@ MonoBehaviour:
   Path: event:/Player/Land
   guid: 21d9bc156405084d8a01479f3874c59a
   Banks:
-  - {fileID: -2664673139279243505}
+  - {fileID: -8323221896105821509}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -559,6 +974,59 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 223
+--- !u!114 &3686799238788197090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141276671113529
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &3714004403922010003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &3911553424700516085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141259063647430
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3941615235260709416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +1042,42 @@ MonoBehaviour:
   Path: FMOD/egyptFmod/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637139192684375686
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3973507673506556184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141585901119476
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4052462271469267688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141557115771880
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -630,6 +1134,41 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &5281234777285139156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &5472876846618231357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141549335319719
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &5552500627765059320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,6 +1187,40 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &6020864889883033049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 4
+  Default: 1
+  Exists: 1
+--- !u!114 &6067443901728881753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 5
+  Default: 1
+  Exists: 0
 --- !u!114 &6100751994245517052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,6 +1238,58 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &6164670465773740507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 4
+  Default: 1
+  Exists: 0
+--- !u!114 &6169173751677314775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &6220544913957691281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/egyptFmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637141629606626299
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &6489778180118572557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +1307,40 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &6617805342433798779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 4
+  Default: 1
+  Exists: 0
+--- !u!114 &6807532301198201105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 5
+  Default: 1
+  Exists: 1
 --- !u!114 &6937067023538470802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,6 +1418,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &8079830773867286273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 1
+  Max: 6
+  Default: 1
+  Exists: 0
 --- !u!114 &8278284576960659355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,4 +1451,21 @@ MonoBehaviour:
   Min: 1
   Max: 4
   Default: 1
+  Exists: 1
+--- !u!114 &9155411612505458675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/DistanceToEnd
+  m_EditorClassIdentifier: 
+  Name: DistanceToEnd
+  Min: 0
+  Max: 100
+  Default: 0
   Exists: 1

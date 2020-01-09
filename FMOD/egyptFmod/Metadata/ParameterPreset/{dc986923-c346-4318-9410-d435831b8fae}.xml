@@ -19,10 +19,13 @@
 			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>4</value>
+			<value>6</value>
 		</property>
 		<property name="initialValue">
 			<value>1</value>
+		</property>
+		<property name="seekSpeed">
+			<value>2.5333333015441895</value>
 		</property>
 	</object>
 </objects>

@@ -64,10 +64,10 @@
 			<value>5</value>
 		</property>
 		<property name="voiceStealing">
-			<value>3</value>
+			<value>4</value>
 		</property>
 		<property name="priority">
-			<value>0</value>
+			<value>1</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{a430140a-fcfb-4d70-aa21-e3232099a289}" />
