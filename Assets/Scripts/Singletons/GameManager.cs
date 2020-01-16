@@ -43,6 +43,8 @@ public class GameManager : MonoSingleton<GameManager>
     private void Awake()
     {
         _instance = this;
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 60;
     }
     void Start()
     {
